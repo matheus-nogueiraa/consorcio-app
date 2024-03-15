@@ -6,6 +6,7 @@ body {
   justify-content: center;
   align-items: flex-start;
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 body {
@@ -13,20 +14,4 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-.container {
-  position: relative;
-  width: 97%;
-  max-width: 100%;
-}
 
-.backgroung-img {
-  padding-top: 0.5%;
-  box-sizing: border-box;
-  position: relative;
-  width: 100%;
-  height: auto;
-  margin-top: 0.5%;
-  margin-right: 0.2%;
-  margin-left: 1.8%;
-  border-radius: 30px;
-}

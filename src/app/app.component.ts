@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatButtonModule } from '@angular/material/button';
-import { NavbarComponent } from './navbar/navbar.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { HomeComponent } from './components/home/home.component';
+import { GroupsComponent } from './components/groups/groups.component';
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MatButtonModule, MatToolbarModule, NavbarComponent],
+  imports: [RouterOutlet, NavbarComponent, HomeComponent, GroupsComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
