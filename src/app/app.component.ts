@@ -3,12 +3,13 @@ import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { GroupsComponent } from './components/groups/groups.component';
+import { ScreenDetailsGroupsComponent } from './screen-details-groups/screen-details-groups.component';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NavbarComponent, HomeComponent, GroupsComponent],
+  imports: [RouterOutlet, NavbarComponent, HomeComponent, GroupsComponent,ScreenDetailsGroupsComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
