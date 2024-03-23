@@ -5,18 +5,13 @@ html, body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  min-height: 120vh;
+  justify-content: flex-start;  
   background-color: #FBF5F2;
   --mdc-filled-text-field-active-indicator-height: 0px;
   --mdc-filled-text-field-focus-active-indicator-height: 0px;
-  --mat-form-field-state-layer-color: rgb(153 70 70 / 87%);
+  --mat-form-field-state-layer-color: #C1425B;
 
 }
-
-
-
-
 
 body {
   margin: 0;
@@ -64,4 +59,11 @@ html .mat-mdc-slide-toggle.mat-accent {
   --mdc-switch-selected-hover-track-color: #F3BAC3;
   --mdc-switch-selected-pressed-track-color: #F3BAC3;
   --mdc-switch-selected-track-color: #F3BAC3;
+}
+
+html .mat-mdc-fab.mat-primary {
+  --mdc-fab-container-color: #A52E45;
+  --mat-fab-foreground-color: #fff;
+  --mat-fab-state-layer-color: #fff;
+  --mat-fab-ripple-color: rgba(255, 255, 255, 0.1);
 }
