@@ -19,7 +19,7 @@ export class FormDetailsGroupsComponent  {
   grupoFechado: boolean = false;
 
   criarGrupo() {
-    // Lógica para enviar os dados do formulário
+   
     console.log('Dados do grupo enviados:', {
       nomeGrupo: this.nomeGrupo,
       valorParcelas: this.valorParcelas,
