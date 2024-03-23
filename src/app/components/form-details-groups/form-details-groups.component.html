@@ -1,0 +1,32 @@
+
+<div class="content">
+  <div class="form" fxLayout="column">
+      <form fxLayout="row wrap" fxLayoutAlign="space-between start">
+
+        <!-- Primeira coluna de inputs -->
+        <mat-form-field class="form-field" fxFlex.gt-sm="calc(50% - 12px)">
+          <input matInput placeholder="Nome do Grupo" formControlName="nomeGrupo">
+        </mat-form-field>
+
+        <mat-form-field class="form-field" fxFlex.gt-sm="calc(50% - 12px)">
+          <input matInput placeholder="Valor das Parcelas" formControlName="valorParcelas">
+        </mat-form-field>
+
+        <!-- Segunda coluna de inputs -->
+        <mat-form-field class="form-field" fxFlex.gt-sm="calc(50% - 12px)">
+          <input matInput placeholder="Valor Total de Créditos" formControlName="valorCreditos">
+        </mat-form-field>
+
+        <mat-form-field class="form-field" fxFlex.gt-sm="calc(50% - 12px)">
+          <input matInput placeholder="Quantidade de Participantes" formControlName="qtdParticipantes">
+        </mat-form-field>
+
+      </form>
+
+      <!-- Switch -->
+      <mat-slide-toggle class="switch" formControlName="grupoFechado">Grupo Fechado</mat-slide-toggle>
+
+      <!-- Botão -->
+      <button mat-raised-button color="primary" (click)="criarGrupo()">Criar Grupo</button>
+  </div>
+</div>

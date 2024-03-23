@@ -1,17 +1,31 @@
-html,
-body {
-  height: 100%;
-  box-sizing: border-box;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&display=swap');
+
+html, body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 120vh;
+  background-color: #FBF5F2;
 }
+
+.content {
+  flex: 1; /* Expande para ocupar todo o espaço restante */
+  margin-bottom: 7rem; /* Altura estimada do footer */
+}
+
+
 
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+:root {
+  --Cinza-grey---darken-1: #444444;
+}
+
+
 
 
