@@ -1,17 +1,39 @@
 .form {
-    position: absolute; /* Mudança para posição absoluta */
-    top: calc(50% + 200px); /* Ajusta a posição vertical abaixo do banner */
-    left: 50%; /* Mantém no centro horizontal */
-    transform: translateX(-50%); /* Realinha ao centro horizontal */
-    display: flex;
-    width: 758px;
-    padding: 40px;
-    border-radius: 30px;
-    border: 1px solid var(--CoolGray-20, #DDE1E6);
-    box-shadow: 0px 10px 13px 0px rgba(0, 0, 0, 0.20);
-    background: var(--Default-White, #FFF);
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 24px;
-  }
+  position: relative;
+  top: calc(50% + 200px); /* Ajusta a posição vertical abaixo do banner */
+  left: 50%; /* Mantém no centro horizontal */
+  transform: translateX(-50%); /* Realinha ao centro horizontal */
+  display: flex;
+  width: 758px;
+  padding: 40px;
+  margin-top: 32px;
+  border-radius: 30px;
+  border: 1px solid var(--CoolGray-20, #DDE1E6);
+  box-shadow: 0px 10px 13px 0px rgba(0, 0, 0, 0.20);
+  background: var(--Default-White, #FFF);
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  gap: 24px;
+}
+
+.content {
+  flex: 1; /* Expande para ocupar todo o espaço restante */
+  margin-bottom: 7rem; /* Altura estimada do footer */
+}
+
+.form-field{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+p{
+  padding-left: 18px;
+}

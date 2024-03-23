@@ -33,6 +33,8 @@
   color: #E56849 !important;
 }
 
+/*NAVBAR*/
+
 /*FOOTER*/
 
 .footer {
@@ -40,7 +42,7 @@
   width: 100%;
   padding: 1.5rem 5rem;
   background-color: #EAD8B1;
-  text-align: center; /* Centraliza o conteúdo */
+  text-align: center;
 }
 
 .footer p {
@@ -54,4 +56,12 @@ padding-bottom: 50px;
 
 .distancia{
   padding-top: 32px;
+}
+
+/*FOOTER*/
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 120vh;
 }
