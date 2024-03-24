@@ -5,7 +5,7 @@ html, body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;  
+  justify-content: flex-start;
   background-color: #FBF5F2;
   --mdc-filled-text-field-active-indicator-height: 0px;
   --mdc-filled-text-field-focus-active-indicator-height: 0px;
@@ -19,7 +19,7 @@ body {
 }
 
 :root {
-  --Cinza-grey---darken-1: #444444;
+  --Cinza-grey---darken-1: #757575;
 }
 
 .form-field .mdc-text-field--filled {
