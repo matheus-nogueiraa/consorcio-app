@@ -56,11 +56,11 @@
 
 .nav-mobile{
   position: fixed;
-  bottom: 34px;
+  bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  width: 316px;
+  width: 80%;
   height: 34px;
   padding: 15px 16px;
   justify-content: space-between;
@@ -129,7 +129,7 @@ padding-bottom: 90px;
   .footer {
     margin-top: 10vh; /* Ajusta automaticamente a margem superior para empurrar o footer para a parte inferior */
     width: 100%;
-    padding: 1.5rem 0;
+    padding: 1rem 0;
     background-color: #EAD8B1;
     text-align: center;
   }
