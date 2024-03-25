@@ -98,3 +98,7 @@ html .mat-mdc-fab.mat-primary {
 .color .mat-mdc-fab.mat-accent {
   --mdc-fab-container-color: #A52E45;
 }
+
+.color .mat-mdc-mini-fab.mat-accent {
+  --mdc-fab-small-container-color: #A52E45;
+}
