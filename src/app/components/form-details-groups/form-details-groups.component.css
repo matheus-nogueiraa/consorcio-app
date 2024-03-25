@@ -1,8 +1,4 @@
 .form {
-  position: relative;
-  top: calc(50% + 200px); /* Ajusta a posição vertical abaixo do banner */
-  left: 50%; /* Mantém no centro horizontal */
-  transform: translateX(-50%); /* Realinha ao centro horizontal */
   display: flex;
   width: 758px;
   padding: 40px;
@@ -19,8 +15,8 @@
 }
 
 .content {
-  flex: 1; /* Expande para ocupar todo o espaço restante */
-  margin-bottom: 7rem; /* Altura estimada do footer */
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
 }
 
 .form-field{
@@ -35,6 +31,53 @@
   justify-content: space-between;
 }
 
+
+
 p{
   padding-left: 18px;
+}
+
+.form-mobile{
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .form {
+    width: 85%;
+  }
+}
+
+@media (max-width: 768px) {
+  .form {
+    display: none; /* Esconde o .form no mobile */
+  }
+
+  .container{
+    justify-content: center;
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .form-mobile {
+    display: flex;
+    width: 80%;
+    padding: 40px 16px;
+    margin-top: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    gap: 24px;
+    border-radius: 30px;
+    border: 1px solid var(--CoolGray-20, #DDE1E6);
+    background: var(--Default-White, #FFF);
+    box-shadow: 0px 10px 13px 0px rgba(0, 0, 0, 0.20);
+    position: relative; /* Posição absoluta para centralizar */
+    top: 50%; /* Centraliza verticalmente */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Realinha ao centro */
+  }
+
+  p{
+    padding-left: 16px;
+  }
 }

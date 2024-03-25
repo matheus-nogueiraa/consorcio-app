@@ -29,6 +29,8 @@
     </div>
     </form>
 
+
+
     <!-- Switch -->
     <div class="switch">
       <mat-slide-toggle formControlName="grupoFechado">Grupo Fechado</mat-slide-toggle>
@@ -38,5 +40,44 @@
     <div class="button">
       <button mat-raised-button color="primary" (click)="criarGrupo()">Criar Grupo</button>
     </div>
+  </div>
+</div>
+
+<!--Mobile form-->
+<div class="form-mobile">
+  <form fxLayout="row wrap" fxLayoutAlign="space-between">
+    <div class="container">
+    <div class="form-field" >
+      <p>Nome do Grupo</p>
+      <mat-form-field>
+        <input matInput placeholder="Escreva aqui" formControlName="nomeGrupo">
+      </mat-form-field>
+
+      <p>Valor das Parcelas</p>
+      <mat-form-field>
+        <input matInput placeholder="Digite aqui" formControlName="valorParcelas" type="number">
+      </mat-form-field>
+
+      <p>Valor Total de Créditos</p>
+      <mat-form-field>
+        <input matInput placeholder="Digite aqui" formControlName="valorCreditos" type="number">
+      </mat-form-field>
+
+      <p>Quantidade de Participantes</p>
+      <mat-form-field>
+        <input matInput placeholder="Digite aqui" formControlName="qtdParticipantes" type="number">
+      </mat-form-field>
+    </div>
+  </div>
+  </form>
+
+  <!-- Switch -->
+  <div class="switch">
+    <mat-slide-toggle formControlName="grupoFechado">Grupo Fechado</mat-slide-toggle>
+  </div>
+
+  <!-- Botão -->
+  <div class="button">
+    <button mat-raised-button color="primary" (click)="criarGrupo()">Criar Grupo</button>
   </div>
 </div>
