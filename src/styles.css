@@ -9,7 +9,7 @@ html, body {
   background-color: #FBF5F2;
   --mdc-filled-text-field-active-indicator-height: 0px;
   --mdc-filled-text-field-focus-active-indicator-height: 0px;
-  --mat-form-field-state-layer-color: #C1425B;
+  --mat-form-field-state-layer-color: #F3BAC3;
 
 }
 
@@ -29,6 +29,10 @@ body {
   -ms-border-radius: 30px !important;
   -o-border-radius: 30px !important;
   width: 100%;
+}
+
+.form-field-login .mat-mdc-form-field-infix{
+  width: 100% !important;
 }
 
 .form-field .mdc-text-field--filled {
@@ -101,4 +105,10 @@ html .mat-mdc-fab.mat-primary {
 
 .color .mat-mdc-mini-fab.mat-accent {
   --mdc-fab-small-container-color: #A52E45;
+}
+
+.register-link{
+  .mat-mdc-button:not(:disabled) {
+    color: #BF5C45;
+}
 }
