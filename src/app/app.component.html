@@ -1,16 +1,16 @@
-<div class="wrapper">
-  <app-banner-login></app-banner-login>
-  <app-form-login></app-form-login>
-</div>
+<router-outlet></router-outlet>
 
 
+
+<ng-container *ngIf="showComponent">
 <nav class="navbar">
     <a routerLink="/" routerLinkActive="active">Início</a>
     <a routerLink="/detailsgroups" routerLinkActive="active">Grupos</a>
     <a routerLink="/faturas" routerLinkActive="active">Faturas</a>
     <a routerLink="/opcoes" routerLinkActive="active">Opções</a>
 </nav>
-
+</ng-container>
+<ng-container *ngIf="showComponent">
 <nav class="nav-mobile">
     <div class="center">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
@@ -34,8 +34,9 @@
       <a routerLink="/opcoes" routerLinkActive="active">Opções</a>
     </div>
 </nav>
-
-
+</ng-container>
+<ng-container *ngIf="showComponent">
 <footer class="footer">
   <p>Todos os direitos reservados</p>
 </footer>
+</ng-container>
