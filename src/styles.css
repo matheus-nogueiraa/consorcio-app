@@ -106,3 +106,9 @@ html .mat-mdc-fab.mat-primary {
 .color .mat-mdc-mini-fab.mat-accent {
   --mdc-fab-small-container-color: #A52E45;
 }
+
+.register-link{
+  .mat-mdc-button:not(:disabled) {
+    color: #BF5C45;
+}
+}

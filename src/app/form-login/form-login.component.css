@@ -31,7 +31,17 @@
   justify-content: center;
 }
 
+.register-link{
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
 
+.register-link p{
+  padding: 0;
+}
 
 p{
   padding-left: 16px;
