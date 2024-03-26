@@ -7,6 +7,8 @@ import { ScreenDetailsGroupsComponent } from './screen-details-groups/screen-det
 import { BannerDetailsGroupsComponent } from "./components/banner-details-groups/banner-details-groups.component";
 import { FormDetailsGroupsComponent } from "./components/form-details-groups/form-details-groups.component";
 import { HeaderDetailsGroupComponent } from "./components/header-details-group/header-details-group.component";
+import { BannerLoginComponent } from "./components/banner-login/banner-login.component";
+import { FormLoginComponent } from "./form-login/form-login.component";
 
 
 @Component({
@@ -14,7 +16,7 @@ import { HeaderDetailsGroupComponent } from "./components/header-details-group/h
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
-    imports: [RouterOutlet, NavbarComponent, HomeComponent, GroupsComponent, ScreenDetailsGroupsComponent, BannerDetailsGroupsComponent, FormDetailsGroupsComponent, HeaderDetailsGroupComponent]
+    imports: [RouterOutlet, NavbarComponent, HomeComponent, GroupsComponent, ScreenDetailsGroupsComponent, BannerDetailsGroupsComponent, FormDetailsGroupsComponent, HeaderDetailsGroupComponent, BannerLoginComponent, FormLoginComponent]
 })
 export class AppComponent {
   title = 'Seu Consórcio';
