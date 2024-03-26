@@ -7,10 +7,14 @@ html, body {
   flex-direction: column;
   justify-content: flex-start;
   background-color: #FBF5F2;
+
+
   --mdc-filled-text-field-active-indicator-height: 0px;
   --mdc-filled-text-field-focus-active-indicator-height: 0px;
   --mat-form-field-state-layer-color: #F3BAC3;
-
+  --mat-stepper-header-selected-state-icon-background-color: #A52E45;
+  --mat-stepper-header-done-state-icon-background-color: #A52E45;
+  --mat-stepper-header-edit-state-icon-background-color: #A52E45;
 }
 
 body {
@@ -129,4 +133,9 @@ html .mat-mdc-fab.mat-primary {
   -moz-border-radius: 30px !important;
   -ms-border-radius: 30px !important;
   -o-border-radius: 30px !important;
+}
+
+.form-register .mat-step-header {
+  border-radius: 30px !important;
+  margin: 10px;
 }

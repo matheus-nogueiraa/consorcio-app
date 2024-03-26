@@ -3,7 +3,7 @@
 <mat-stepper #stepper>
   <mat-step [stepControl]="firstFormGroup" errorMessage="Name is required.">
     <form [formGroup]="firstFormGroup">
-      <ng-template matStepLabel>Fill out your name</ng-template>
+      <ng-template matStepLabel>E-mail e Senha</ng-template>
       <mat-form-field>
         <mat-label>Name</mat-label>
         <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
@@ -16,7 +16,7 @@
   </mat-step>
   <mat-step [stepControl]="secondFormGroup" errorMessage="Address is required.">
     <form [formGroup]="secondFormGroup">
-      <ng-template matStepLabel>Fill out your address</ng-template>
+      <ng-template matStepLabel>Dados Pessoais</ng-template>
       <mat-form-field>
         <mat-label>Address</mat-label>
         <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="secondCtrl"
@@ -30,7 +30,7 @@
     </form>
   </mat-step>
   <mat-step>
-    <ng-template matStepLabel>Done</ng-template>
+    <ng-template matStepLabel>Seu Endereço</ng-template>
     <p>You are now done.</p>
     <div>
       <button mat-button matStepperPrevious>Back</button>
