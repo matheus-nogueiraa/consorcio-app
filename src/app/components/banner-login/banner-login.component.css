@@ -41,7 +41,7 @@
 
 @media (max-width: 1024px) {
   .banner {
-    width: 85%;
+    width: 70%;
   }
 }
 
@@ -51,21 +51,25 @@
   display: flex;
   width: 80%;
   height: 112px;
-  padding: 20px;
+  padding: 17px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
+  position: absolute; /* Posição absoluta para centralizar */
+  top: 15%; /* Centraliza verticalmente */
+  left: 50%; /* Centraliza horizontalmente */
+  transform: translate(-50%, -50%); /* Realinha ao centro */
   }
 
   .banner h2 {
-    font-size: 34px;
+    font-size: 48px;
     font-style: normal;
     font-weight: 500;
   }
 
   .banner p {
-    font-size: 16px;
+    font-size: 14px;
     font-style: normal;
     font-weight: 400;
   }

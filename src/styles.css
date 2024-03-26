@@ -31,6 +31,10 @@ body {
   width: 100%;
 }
 
+.form-field-login .mat-mdc-form-field-infix{
+  width: 100% !important;
+}
+
 .form-field .mdc-text-field--filled {
   border-radius: 30px !important;
   -webkit-border-radius: 30px !important;

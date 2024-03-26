@@ -3,25 +3,25 @@
   <div class="form" fxLayout="column">
     <form fxLayout="row wrap" fxLayoutAlign="space-between">
       <div class="container">
-        <div class="form-field">
-          <p>Email</p>
+        <div class="form-field-login">
+          <p>E-mail</p>
           <mat-form-field>
-            <mat-label>Enter your email</mat-label>
             <input matInput
-                   placeholder="pat@example.com"
+                   placeholder="Digite seu e-mail"
                    [formControl]="email"
                    (blur)="updateErrorMessage()"
                    required>
             @if (email.invalid) {
               <mat-error>{{errorMessage}}</mat-error>
             }
-          </mat-form-field>
-        </div>
 
-        <div class="form-field">
+          </mat-form-field>
           <p>Senha</p>
-          <mat-form-field appearance="fill">
-            <input matInput placeholder="Digite sua senha" formControlName="senha" type="password">
+          <mat-form-field>
+            <input matInput [type]="hide ? 'password' : 'text'" placeholder="Digite sua senha">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
           </mat-form-field>
         </div>
       </div>
@@ -31,39 +31,5 @@
     <div class="button">
       <button mat-raised-button color="primary">Entrar</button>
     </div>
-  </div>
-</div>
-
-<!-- Mobile form -->
-<div class="form-mobile">
-  <form fxLayout="row wrap" fxLayoutAlign="space-between">
-    <div class="container">
-      <div class="form-field">
-        <p>Email</p>
-        <mat-form-field>
-          <mat-label>Enter your email</mat-label>
-          <input matInput
-                 placeholder="pat@example.com"
-                 [formControl]="email"
-                 (blur)="updateErrorMessage()"
-                 required>
-          @if (email.invalid) {
-            <mat-error>{{errorMessage}}</mat-error>
-          }
-        </mat-form-field>
-      </div>
-
-      <div class="form-field">
-        <p>Senha</p>
-        <mat-form-field appearance="fill">
-          <input matInput placeholder="Digite sua senha" formControlName="senha" type="password">
-        </mat-form-field>
-      </div>
-    </div>
-  </form>
-
-  <!-- Botão -->
-  <div class="button">
-    <button mat-raised-button color="primary" >Entrar</button>
   </div>
 </div>

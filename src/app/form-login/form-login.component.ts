@@ -16,10 +16,14 @@ import {merge} from 'rxjs';
 })
 export class FormLoginComponent {
 
+  hide = true;
+
+  
 
   email = new FormControl('', [Validators.required, Validators.email]);
 
   errorMessage = '';
+
 
   constructor() {
     merge(this.email.statusChanges, this.email.valueChanges)
@@ -29,9 +33,9 @@ export class FormLoginComponent {
 
   updateErrorMessage() {
     if (this.email.hasError('required')) {
-      this.errorMessage = 'You must enter a value';
+      this.errorMessage = 'Preencha este campo!';
     } else if (this.email.hasError('email')) {
-      this.errorMessage = 'Not a valid email';
+      this.errorMessage = 'Insira um e-mail válido';
     } else {
       this.errorMessage = '';
     }
