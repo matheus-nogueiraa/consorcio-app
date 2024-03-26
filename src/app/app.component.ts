@@ -9,6 +9,7 @@ import { FormDetailsGroupsComponent } from "./components/form-details-groups/for
 import { HeaderDetailsGroupComponent } from "./components/header-details-group/header-details-group.component";
 import { BannerLoginComponent } from "./components/banner-login/banner-login.component";
 import { FormLoginComponent } from "./form-login/form-login.component";
+import { BannerRegisterComponent } from "./components/banner-register/banner-register.component";
 
 
 @Component({
@@ -16,7 +17,7 @@ import { FormLoginComponent } from "./form-login/form-login.component";
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
-    imports: [RouterOutlet, NavbarComponent, HomeComponent, GroupsComponent, ScreenDetailsGroupsComponent, BannerDetailsGroupsComponent, FormDetailsGroupsComponent, HeaderDetailsGroupComponent, BannerLoginComponent, FormLoginComponent]
+    imports: [RouterOutlet, NavbarComponent, HomeComponent, GroupsComponent, ScreenDetailsGroupsComponent, BannerDetailsGroupsComponent, FormDetailsGroupsComponent, HeaderDetailsGroupComponent, BannerLoginComponent, FormLoginComponent, BannerRegisterComponent]
 })
 export class AppComponent {
   title = 'Seu Consórcio';
