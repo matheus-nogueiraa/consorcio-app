@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { GroupsComponent } from './components/groups/groups.component';
@@ -8,20 +8,27 @@ import { BannerDetailsGroupsComponent } from "./components/banner-details-groups
 import { FormDetailsGroupsComponent } from "./components/form-details-groups/form-details-groups.component";
 import { HeaderDetailsGroupComponent } from "./components/header-details-group/header-details-group.component";
 import { BannerLoginComponent } from "./components/banner-login/banner-login.component";
-import { FormLoginComponent } from "./form-login/form-login.component";
+import { FormLoginComponent } from "./components/form-login/form-login.component";
 import { BannerRegisterComponent } from "./components/banner-register/banner-register.component";
-import { StepperErrorsExample } from "./form-register/form-register.component";
+import { StepperErrorsExample } from "./components/form-register/form-register.component";
 import { CommonModule } from '@angular/common';
-
+import { VisibilityService } from './services/visibility.service';
 
 @Component({
     selector: 'app-root',
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
-    imports: [RouterOutlet, NavbarComponent, HomeComponent, GroupsComponent, ScreenDetailsGroupsComponent, BannerDetailsGroupsComponent, FormDetailsGroupsComponent, HeaderDetailsGroupComponent, BannerLoginComponent, FormLoginComponent, BannerRegisterComponent, StepperErrorsExample, CommonModule]
+    imports: [RouterOutlet, NavbarComponent, HomeComponent, GroupsComponent, ScreenDetailsGroupsComponent, BannerDetailsGroupsComponent, FormDetailsGroupsComponent, HeaderDetailsGroupComponent, BannerLoginComponent, FormLoginComponent, BannerRegisterComponent, StepperErrorsExample, CommonModule, RouterLink, RouterLinkActive]
 })
 export class AppComponent {
   title = 'Seu Consórcio';
-  showComponent: any;
+
+  constructor(private visibilityService: VisibilityService) {}
+
+  public getShowComponent(): boolean {
+    return this.visibilityService.getShowComponent();
+  }
+
+
 }
