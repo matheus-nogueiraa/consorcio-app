@@ -16,3 +16,51 @@
   flex-direction: row;
   justify-content: center;
 }
+
+p{
+  padding-left: 16px;
+  padding-bottom: 8px;
+  margin-bottom: 0;
+  font-size: 16px;
+}
+
+.form-field-register{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.register-link{
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.register-link p{
+  padding: 0;
+}
+
+.register-link-container{
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.space{
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+
+.form-field-endereco{
+  display: flex;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}

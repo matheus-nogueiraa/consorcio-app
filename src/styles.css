@@ -35,9 +35,23 @@ body {
   width: 100%;
 }
 
+.form-field-endereco .mdc-text-field--filled{
+  width: 356px;
+}
+
 .form-field-login .mat-mdc-form-field-infix{
   width: 100% !important;
 }
+
+.form-field-register .mat-mdc-form-field-infix{
+  width: 100% !important;
+}
+
+.form-field-register .mat-mdc-raised-button.mat-accent {
+  --mdc-protected-button-container-color: #A52E45;
+  border-radius: 30px !important;
+}
+
 
 .form-field .mdc-text-field--filled {
   border-radius: 30px !important;

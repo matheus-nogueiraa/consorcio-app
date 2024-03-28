@@ -10,16 +10,16 @@ import { HeaderDetailsGroupComponent } from "./components/header-details-group/h
 import { BannerLoginComponent } from "./components/banner-login/banner-login.component";
 import { FormLoginComponent } from "./components/form-login/form-login.component";
 import { BannerRegisterComponent } from "./components/banner-register/banner-register.component";
-import { StepperErrorsExample } from "./components/form-register/form-register.component";
 import { CommonModule } from '@angular/common';
 import { VisibilityService } from './services/visibility.service';
+import { FormRegisterComponent } from './components/form-register/form-register.component';
 
 @Component({
     selector: 'app-root',
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
-    imports: [RouterOutlet, NavbarComponent, HomeComponent, GroupsComponent, ScreenDetailsGroupsComponent, BannerDetailsGroupsComponent, FormDetailsGroupsComponent, HeaderDetailsGroupComponent, BannerLoginComponent, FormLoginComponent, BannerRegisterComponent, StepperErrorsExample, CommonModule, RouterLink, RouterLinkActive]
+    imports: [RouterOutlet, NavbarComponent, HomeComponent, GroupsComponent, ScreenDetailsGroupsComponent, BannerDetailsGroupsComponent, FormDetailsGroupsComponent, HeaderDetailsGroupComponent, BannerLoginComponent, FormLoginComponent, BannerRegisterComponent, FormRegisterComponent, CommonModule, RouterLink, RouterLinkActive]
 })
 export class AppComponent {
   title = 'Seu Consórcio';

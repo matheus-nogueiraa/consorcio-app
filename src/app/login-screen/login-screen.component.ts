@@ -13,6 +13,6 @@ import { VisibilityService } from '../services/visibility.service';
 
 export class LoginScreenComponent {
   constructor(private visibilityService: VisibilityService) {
-    this.visibilityService.setShowComponent(false); 
+    this.visibilityService.setShowComponent(false);
   }
 }

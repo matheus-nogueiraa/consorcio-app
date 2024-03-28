@@ -1,10 +1,15 @@
 import { Component } from '@angular/core';
-import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, ReactiveFormsModule, Validators, FormControl, FormsModule } from '@angular/forms';
 import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
-import { MatButtonModule } from '@angular/material/button';
+import {MatButtonModule} from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatStepperModule } from '@angular/material/stepper';
+import {takeUntilDestroyed} from '@angular/core/rxjs-interop';
+import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
+import { MatIconModule } from '@angular/material/icon';
+
+
 
 @Component({
   selector: 'app-form-register',
@@ -13,7 +18,7 @@ import { MatStepperModule } from '@angular/material/stepper';
   providers: [
     {
       provide: STEPPER_GLOBAL_OPTIONS,
-      useValue: {showError: true},
+      useValue: {showError: false},
     },
   ],
   standalone: true,
@@ -23,15 +28,57 @@ import { MatStepperModule } from '@angular/material/stepper';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
+    MatInputModule,
+    FormsModule,
+    RouterOutlet,
+    RouterLink,
+    RouterLinkActive,
+    MatIconModule
   ],
 })
-export class StepperErrorsExample {
-  firstFormGroup = this._formBuilder.group({
-    firstCtrl: ['', Validators.required],
-  });
-  secondFormGroup = this._formBuilder.group({
-    secondCtrl: ['', Validators.required],
-  });
+export class FormRegisterComponent {
+    firstFormGroup = this._formBuilder.group({
+      firstCtrl: ['', Validators.required],
+    });
+    secondFormGroup = this._formBuilder.group({
+      secondCtrl: ['', Validators.required],
+    });
 
-  constructor(private _formBuilder: FormBuilder) {}
+    firstStepCompleted = false;
+    secondStepCompleted = false;
+
+    hide = true;
+
+    email = new FormControl('', [Validators.required, Validators.email]);
+
+    errorMessage = '';
+
+    constructor(private _formBuilder: FormBuilder) {
+      this.setupEmailListener();
+    }
+
+    setupEmailListener() {
+      this.email.statusChanges.pipe(
+        takeUntilDestroyed()
+      ).subscribe(() => this.updateErrorMessage());
+    }
+
+    updateErrorMessage() {
+      if (this.email.hasError('required')) {
+        this.errorMessage = 'Preencha este campo!';
+      } else if (this.email.hasError('email')) {
+        this.errorMessage = 'Insira um e-mail válido';
+      } else {
+        this.errorMessage = '';
+      }
+    }
+
+    onStepChange(step: number) {
+      if (step === 0) {
+        this.firstStepCompleted = true;
+      } else if (step === 1) {
+        this.secondStepCompleted = true;
+      }
+    }
+
 }

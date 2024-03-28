@@ -6,19 +6,21 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {takeUntilDestroyed} from '@angular/core/rxjs-interop';
 import {merge} from 'rxjs';
+import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
+
 
 @Component({
   selector: 'app-form-login',
   templateUrl: './form-login.component.html',
   styleUrls: ['./form-login.component.css'],
   standalone: true,
-  imports: [MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule, FormsModule, ReactiveFormsModule],
+  imports: [MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule, FormsModule, ReactiveFormsModule, RouterOutlet, RouterLink, RouterLinkActive],
 })
 export class FormLoginComponent {
 
   hide = true;
 
-  
+
 
   email = new FormControl('', [Validators.required, Validators.email]);
 

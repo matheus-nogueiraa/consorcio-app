@@ -7,7 +7,6 @@ import { FormDetailsGroupsComponent } from './components/form-details-groups/for
 import { RegisterScreenComponent } from './register-screen/register-screen.component';
 import { LoginScreenComponent } from './login-screen/login-screen.component';
 
-
 export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'groups', component: GroupsComponent },
@@ -15,7 +14,7 @@ export const routes: Routes = [
   { path: 'bannerdetailsgroups', component: BannerDetailsGroupsComponent},
   { path: 'formdetailsgroups', component: FormDetailsGroupsComponent},
   { path: 'register', component: RegisterScreenComponent},
-  { path: 'login', component: LoginScreenComponent}
+  { path: 'login', component: LoginScreenComponent},
   ];
 
 export class AppRoutingModule { }
