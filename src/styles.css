@@ -35,9 +35,23 @@ body {
   width: 100%;
 }
 
+.form-field-endereco .mdc-text-field--filled{
+  width: 356px;
+}
+
 .form-field-login .mat-mdc-form-field-infix{
   width: 100% !important;
 }
+
+.form-field-register .mat-mdc-form-field-infix{
+  width: 100% !important;
+}
+
+.form-field-register .mat-mdc-raised-button.mat-accent {
+  --mdc-protected-button-container-color: #A52E45;
+  border-radius: 30px !important;
+}
+
 
 .form-field .mdc-text-field--filled {
   border-radius: 30px !important;
@@ -138,4 +152,16 @@ html .mat-mdc-fab.mat-primary {
 .form-register .mat-step-header {
   border-radius: 30px !important;
   margin: 10px;
+}
+
+
+@media (max-width: 768px) {
+  .form-field-login{
+    --mat-form-field-container-height: 44px;
+    --mat-form-field-container-vertical-padding: 12px;
+  }
+
+  .form-field-login .mdc-text-field--no-label .mat-mdc-form-field-infix {
+    font-size: 14px;
+}
 }

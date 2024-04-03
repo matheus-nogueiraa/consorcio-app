@@ -5,7 +5,7 @@ import { ScreenDetailsGroupsComponent } from './screen-details-groups/screen-det
 import { BannerDetailsGroupsComponent } from './components/banner-details-groups/banner-details-groups.component';
 import { FormDetailsGroupsComponent } from './components/form-details-groups/form-details-groups.component';
 import { RegisterScreenComponent } from './register-screen/register-screen.component';
-
+import { LoginScreenComponent } from './login-screen/login-screen.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -13,8 +13,8 @@ export const routes: Routes = [
   { path: 'detailsgroups', component: ScreenDetailsGroupsComponent},
   { path: 'bannerdetailsgroups', component: BannerDetailsGroupsComponent},
   { path: 'formdetailsgroups', component: FormDetailsGroupsComponent},
-  { path: 'register', component: RegisterScreenComponent}
-
+  { path: 'register', component: RegisterScreenComponent},
+  { path: 'login', component: LoginScreenComponent},
   ];
 
 export class AppRoutingModule { }
