@@ -79,6 +79,7 @@
   font-style: normal;
   font-weight: 500;
   line-height: 100%;
+  text-decoration: none;
 }
 
 .nav-mobile a:hover {
@@ -91,7 +92,7 @@
 /*FOOTER*/
 
 .footer {
-  margin-top: auto; /* Ajusta automaticamente a margem superior para empurrar o footer para a parte inferior */
+  margin-top: 14vh !important;
   width: 100%;
   padding: 1.5rem 0;
   background-color: #EAD8B1;

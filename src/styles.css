@@ -153,3 +153,15 @@ html .mat-mdc-fab.mat-primary {
   border-radius: 30px !important;
   margin: 10px;
 }
+
+
+@media (max-width: 768px) {
+  .form-field-login{
+    --mat-form-field-container-height: 44px;
+    --mat-form-field-container-vertical-padding: 12px;
+  }
+
+  .form-field-login .mdc-text-field--no-label .mat-mdc-form-field-infix {
+    font-size: 14px;
+}
+}
