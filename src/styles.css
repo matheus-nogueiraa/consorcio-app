@@ -156,12 +156,12 @@ html .mat-mdc-fab.mat-primary {
 
 
 @media (max-width: 768px) {
-  .form-field-login{
+  .mdc-text-field--no-label .mat-mdc-form-field-infix {
     --mat-form-field-container-height: 44px;
     --mat-form-field-container-vertical-padding: 12px;
   }
 
-  .form-field-login .mdc-text-field--no-label .mat-mdc-form-field-infix {
+  .mdc-text-field--no-label .mat-mdc-form-field-infix {
     font-size: 14px;
 }
 }

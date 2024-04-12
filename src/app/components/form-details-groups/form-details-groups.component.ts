@@ -12,14 +12,14 @@ import { MatButtonModule } from '@angular/material/button'
   styleUrl: './form-details-groups.component.css'
 })
 export class FormDetailsGroupsComponent  {
-  nomeGrupo: string = " ";
+  nomeGrupo: string = "";
   valorParcelas: number = 0;
   valorCreditos: number = 0;
   quantidadeParticipantes: number = 0;
   grupoFechado: boolean = false;
 
   criarGrupo() {
-   
+
     console.log('Dados do grupo enviados:', {
       nomeGrupo: this.nomeGrupo,
       valorParcelas: this.valorParcelas,
