@@ -3,30 +3,30 @@
     <form fxLayout="row wrap" fxLayoutAlign="space-between">
       <!-- Grupo 1 -->
       <div class="container">
-      <div class="form-field" >
-        <p>Nome do Grupo</p>
-        <mat-form-field>
-          <input matInput placeholder="Escreva aqui" formControlName="nomeGrupo">
-        </mat-form-field>
-
-        <p>Valor das Parcelas</p>
-        <mat-form-field>
-          <input matInput placeholder="Digite aqui" formControlName="valorParcelas" type="number">
-        </mat-form-field>
+        <div class="form-field">
+          <p>Nome do Grupo</p>
+          <mat-form-field>
+            <input matInput placeholder="Escreva aqui" [(ngModel)]="nomeGrupo" name="nomeGrupo">
+          </mat-form-field>
+    
+          <p>Valor das Parcelas</p>
+          <mat-form-field>
+            <input matInput placeholder="Digite aqui" [(ngModel)]="valorParcelas" type="number" name="valorParcelas">
+          </mat-form-field>
+        </div>
+        <!-- Grupo 2 -->
+        <div class="form-field" fxLayout="column">
+          <p>Valor Total de Créditos</p>
+          <mat-form-field>
+            <input matInput placeholder="Digite aqui" [(ngModel)]="valorCreditos" type="number" name="valorCreditos">
+          </mat-form-field>
+    
+          <p>Quantidade de Participantes</p>
+          <mat-form-field>
+            <input matInput placeholder="Digite aqui" [(ngModel)]="quantidadeParticipantes" type="number" name="quantidadeParticipantes">
+          </mat-form-field>
+        </div>
       </div>
-      <!-- Grupo 2 -->
-      <div class="form-field" fxLayout="column">
-        <p>Valor Total de Créditos</p>
-        <mat-form-field>
-          <input matInput placeholder="Digite aqui" formControlName="valorCreditos" type="number">
-        </mat-form-field>
-
-        <p>Quantidade de Participantes</p>
-        <mat-form-field>
-          <input matInput placeholder="Digite aqui" formControlName="qtdParticipantes" type="number">
-        </mat-form-field>
-      </div>
-    </div>
     </form>
 
 
@@ -47,28 +47,28 @@
 <div class="form-mobile">
   <form fxLayout="row wrap" fxLayoutAlign="space-between">
     <div class="container">
-    <div class="form-field" >
-      <p>Nome do Grupo</p>
-      <mat-form-field>
-        <input matInput placeholder="Escreva aqui" formControlName="nomeGrupo">
-      </mat-form-field>
+      <div class="form-field">
+        <p>Nome do Grupo</p>
+        <mat-form-field>
+          <input matInput placeholder="Escreva aqui" formControlName="nomeGrupo">
+        </mat-form-field>
 
-      <p>Valor das Parcelas</p>
-      <mat-form-field>
-        <input matInput placeholder="Digite aqui" formControlName="valorParcelas" type="number">
-      </mat-form-field>
+        <p>Valor das Parcelas</p>
+        <mat-form-field>
+          <input matInput placeholder="Digite aqui" formControlName="valorParcelas" type="number">
+        </mat-form-field>
 
-      <p>Valor Total de Créditos</p>
-      <mat-form-field>
-        <input matInput placeholder="Digite aqui" formControlName="valorCreditos" type="number">
-      </mat-form-field>
+        <p>Valor Total de Créditos</p>
+        <mat-form-field>
+          <input matInput placeholder="Digite aqui" formControlName="valorCreditos" type="number">
+        </mat-form-field>
 
-      <p>Quantidade de Participantes</p>
-      <mat-form-field>
-        <input matInput placeholder="Digite aqui" formControlName="qtdParticipantes" type="number">
-      </mat-form-field>
+        <p>Quantidade de Participantes</p>
+        <mat-form-field>
+          <input matInput placeholder="Digite aqui" formControlName="qtdParticipantes" type="number">
+        </mat-form-field>
+      </div>
     </div>
-  </div>
   </form>
 
   <!-- Switch -->

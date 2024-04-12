@@ -21,7 +21,7 @@
   font-size: 105px;
   font-style: normal;
   font-weight: 900;
-  line-height: 96px; /* 75% */
+  line-height: 96px;
   letter-spacing: 1.5px;
 }
 
@@ -48,7 +48,7 @@
 
 .info-p {
   font-size: 15px;
-font-weight: 300;
+  font-weight: 300;
 }
 
 
@@ -60,12 +60,12 @@ font-weight: 300;
 
 .backgroung-img {
   padding-top: 0.5%;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
   position: relative;
-  width: 1500px;
-  height: 710px;
+  width: 100%; /* Alterado de 100vw para 100% */
+  height: auto;
   margin-top: 0.5%;
-  margin-left: 0.2%;
+  margin-left: 1.5%;
   margin-right: 0.3%;
   border-radius: 30px;
 }
