@@ -3,12 +3,11 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatButtonModule } from '@angular/material/button'
-import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-form-details-groups',
   standalone: true,
-  imports: [FormsModule, MatInputModule, MatFormFieldModule, MatSlideToggleModule, MatButtonModule],
+  imports: [MatInputModule, MatFormFieldModule, MatSlideToggleModule, MatButtonModule],
   templateUrl: './form-details-groups.component.html',
   styleUrls: ['./form-details-groups.component.css']
 })
