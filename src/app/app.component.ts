@@ -4,10 +4,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './views/home/home.component';
 import { GroupsComponent } from './views/groups/groups.component';
 import { HeaderDetailsGroupComponent } from './components/header-details-group/header-details-group.component';
-import { BannerRegisterComponent } from './components/banner-register/banner-register.component';
 import { CommonModule } from '@angular/common';
 import { VisibilityService } from './services/visibility.service';
-import { FormRegisterComponent } from './components/form-register/form-register.component';
 
 @Component({
   selector: 'app-root',
@@ -20,8 +18,6 @@ import { FormRegisterComponent } from './components/form-register/form-register.
     HomeComponent,
     GroupsComponent,
     HeaderDetailsGroupComponent,
-    BannerRegisterComponent,
-    FormRegisterComponent,
     CommonModule,
     RouterLink,
     RouterLinkActive,
