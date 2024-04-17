@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { BannerRegisterComponent } from "../components/banner-register/banner-register.component";
-import { VisibilityService } from '../services/visibility.service';
-import { FormRegisterComponent } from '../components/form-register/form-register.component';
+import { BannerRegisterComponent } from "../../components/banner-register/banner-register.component";
+import { VisibilityService } from '../../services/visibility.service';
+import { FormRegisterComponent } from '../../components/form-register/form-register.component';
 @Component({
     selector: 'app-register-screen',
     standalone: true,
