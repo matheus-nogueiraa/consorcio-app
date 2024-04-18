@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
-import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './views/home/home.component';
 import { GroupsComponent } from './views/groups/groups.component';
 import { HeaderDetailsGroupComponent } from './components/header-details-group/header-details-group.component';
@@ -14,7 +13,6 @@ import { VisibilityService } from './services/visibility.service';
   styleUrl: './app.component.css',
   imports: [
     RouterOutlet,
-    NavbarComponent,
     HomeComponent,
     GroupsComponent,
     HeaderDetailsGroupComponent,
