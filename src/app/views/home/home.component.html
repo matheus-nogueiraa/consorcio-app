@@ -1,6 +1,5 @@
 <div class="container">
   <img class="backgroung-img" src="../assets/imagebackground.jpeg" alt="">
-
   <div class="info">
     <h1 class="mat-headline-1 info-h1"><strong>CPPD</strong></h1>
     <h2 class="mat-headline-5 info-h2">Consórcio - O Caminho Inteligente para Realizar Seus Sonhos!</h2>
@@ -10,7 +9,30 @@
     </p>
     <p class="info-p">Junte-se a nós e transforme seus sonhos em realidade hoje mesmo!</p>
     <br>
-    <button class="btn" mat-flat-button color="warn">Começar</button>
+    <button class="start" mat-flat-button color="warn">Começar</button>
+  </div>
+</div>
+<br>
+<div>
+  <div class="categorias">
+    <h4>CATEGORIAS</h4>
+  </div>
+  <br>
+  <div class="categorias">
+    <button class="btn" mat-flat-button style="background-color: #A52E45; color: white;">TODOS</button>
+    <button class="btn" mat-flat-button>ATÉ R$500,00</button>
+    <button class="btn" mat-flat-button>ATÉ R$1.000,00</button>
+    <button class="btn" mat-flat-button>ATÉ R$5.000,00</button>
+    <button class="btn" mat-flat-button>ATÉ R$10.000,00</button>
+  </div>
+  <div class="cards">
+    <app-card-groups-consortium
+    title="Consórcio Compartilhado"
+    totalCreditos="R$ 300,00"
+    valorParcelas="R$ 50,00"
+    totalParcelas="6"
+    backgroundColor="#C0C0C0"
+    ></app-card-groups-consortium>
   </div>
 </div>
 

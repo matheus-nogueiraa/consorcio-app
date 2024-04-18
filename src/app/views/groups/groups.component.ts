@@ -4,6 +4,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { HeaderDetailsGroupComponent } from '../../components/header-details-group/header-details-group.component';
+import { BannerComponent } from '../../components/banner/banner.component';
 
 @Component({
   selector: 'app-groups',
@@ -13,7 +14,8 @@ import { HeaderDetailsGroupComponent } from '../../components/header-details-gro
     MatFormFieldModule, 
     MatSlideToggleModule, 
     MatButtonModule, 
-    HeaderDetailsGroupComponent
+    HeaderDetailsGroupComponent,
+    BannerComponent
   ],
   templateUrl: './groups.component.html',
   styleUrl: './groups.component.css'

@@ -1,0 +1,29 @@
+.card {
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #f0f0f0; 
+  width:  12rem; 
+  height: 19rem; 
+  max-width: 100%;
+}
+
+h3 {
+  margin-top: 0; 
+}
+
+p {
+  margin: 10px 0; 
+}
+
+button {
+  color: white;
+  border: 3px solid #0000; 
+  border-radius: 20px;
+  padding: 8px 12px;
+  cursor: pointer;
+  margin-top: 4rem;
+  justify-content: center;
+  margin-left: 2.5rem;
+  outline: black;
+}
