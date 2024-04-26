@@ -1,13 +1,13 @@
-import { Component } from '@angular/core';
-import { FormBuilder, ReactiveFormsModule, Validators, FormControl, FormsModule } from '@angular/forms';
+import { Component, OnInit, OnDestroy} from '@angular/core';
+import { FormBuilder, ReactiveFormsModule, Validators, FormControl, FormsModule, FormGroup } from '@angular/forms';
 import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
 import {MatButtonModule} from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatStepperModule } from '@angular/material/stepper';
-import {takeUntilDestroyed} from '@angular/core/rxjs-interop';
-import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
+import { takeUntil } from 'rxjs/operators';import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
+import { Subject } from 'rxjs';
 
 
 
@@ -33,52 +33,83 @@ import { MatIconModule } from '@angular/material/icon';
     RouterOutlet,
     RouterLink,
     RouterLinkActive,
-    MatIconModule
+    MatIconModule,
   ],
 })
-export class FormRegisterComponent {
-    firstFormGroup = this._formBuilder.group({
-      firstCtrl: ['', Validators.required],
+export class FormRegisterComponent implements OnInit, OnDestroy {
+  signupUsers: any[] = [];
+  firstFormGroup: FormGroup = new FormGroup({});
+  secondFormGroup: FormGroup = new FormGroup({});
+  hide = true;
+  emailControl = new FormControl('');
+  passwordControl = new FormControl('');
+  nameControl = new FormControl('');
+  cpfControl = new FormControl('');
+  phoneControl = new FormControl('');
+  cityControl = new FormControl('');
+  stateControl = new FormControl('');
+  cepControl = new FormControl('');
+  complementControl = new FormControl('');
+  addressControl = new FormControl('');
+
+  errorMessage = '';
+
+  private unsubscribe$ = new Subject<void>();
+
+  constructor(private _formBuilder: FormBuilder) {}
+
+  ngOnInit() {
+    this.firstFormGroup = this._formBuilder.group({
+      email: this.emailControl,
+      password: this.passwordControl,
     });
-    secondFormGroup = this._formBuilder.group({
-      secondCtrl: ['', Validators.required],
+
+    this.secondFormGroup = this._formBuilder.group({
+      name: this.nameControl,
+      cpf: this.cpfControl,
+      phone: this.phoneControl,
+      city: this.cityControl,
+      state: this.stateControl,
+      cep: this.cepControl,
+      complement: this.complementControl,
+      address: this.addressControl,
     });
 
-    firstStepCompleted = false;
-    secondStepCompleted = false;
+    this.setupEmailListener();
+  }
 
-    hide = true;
+  ngOnDestroy() {
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
+  }
 
-    email = new FormControl('', [Validators.required, Validators.email]);
+  setupEmailListener() {
+    this.emailControl.statusChanges.pipe(
+      takeUntil(this.unsubscribe$)
+    ).subscribe(() => this.updateErrorMessage());
+  }
 
-    errorMessage = '';
+  updateErrorMessage() {
+    this.errorMessage = '';
+  }
 
-    constructor(private _formBuilder: FormBuilder) {
-      this.setupEmailListener();
-    }
+  onSignUp() {
+    // Adicione a lógica para processar o formulário e salvar os dados
+    const signUpData = {
+      email: this.emailControl.value,
+      password: this.passwordControl.value,
+      name: this.nameControl.value,
+      cpf: this.cpfControl.value,
+      phone: this.phoneControl.value,
+      city: this.cityControl.value,
+      state: this.stateControl.value,
+      cep: this.cepControl.value,
+      complement: this.complementControl.value,
+      address: this.addressControl.value,
+    };
 
-    setupEmailListener() {
-      this.email.statusChanges.pipe(
-        takeUntilDestroyed()
-      ).subscribe(() => this.updateErrorMessage());
-    }
-
-    updateErrorMessage() {
-      if (this.email.hasError('required')) {
-        this.errorMessage = 'Preencha este campo!';
-      } else if (this.email.hasError('email')) {
-        this.errorMessage = 'Insira um e-mail válido';
-      } else {
-        this.errorMessage = '';
-      }
-    }
-
-    onStepChange(step: number) {
-      if (step === 0) {
-        this.firstStepCompleted = true;
-      } else if (step === 1) {
-        this.secondStepCompleted = true;
-      }
-    }
-
+    // Adicione a lógica para salvar os dados ou enviá-los para o servidor
+    this.signupUsers.push(signUpData);
+    localStorage.setItem("signUpUsers", JSON.stringify(this.signupUsers));
+  }
 }

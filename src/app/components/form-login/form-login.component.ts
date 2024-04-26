@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Validators, FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -7,6 +7,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import {takeUntilDestroyed} from '@angular/core/rxjs-interop';
 import {merge} from 'rxjs';
 import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
+import { state } from '@angular/animations';
 
 
 @Component({
@@ -18,9 +19,25 @@ import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
 })
 export class FormLoginComponent {
 
+  signupUsers: any[] = [];
+  signupObj: any = {
+    email: "",
+    password: "",
+    name: "",
+    cpf: "",
+    phone: "",
+    city: "",
+    state: "",
+    cep: "",
+    complement: "",
+    address: "",
+  };
+  loginObj: any = {
+    email: "",
+    password: "",
+  };
+
   hide = true;
-
-
 
   email = new FormControl('', [Validators.required, Validators.email]);
 
@@ -42,4 +59,6 @@ export class FormLoginComponent {
       this.errorMessage = '';
     }
 }
+
+
 }
