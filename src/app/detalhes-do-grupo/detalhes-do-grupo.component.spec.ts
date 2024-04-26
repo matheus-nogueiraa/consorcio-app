@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { DetalhesDoGrupoComponent } from './detalhes-do-grupo.component';
 
 describe('DetalhesDoGrupoComponent', () => {

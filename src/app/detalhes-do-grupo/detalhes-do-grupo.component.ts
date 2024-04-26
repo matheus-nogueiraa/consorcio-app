@@ -3,12 +3,15 @@ import { BannerDetailsGroupsComponent } from '../components/banner-details-group
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { MatButtonModule } from '@angular/material/button'
+import { MatButtonModule } from '@angular/material/button';
+import { HeaderDetailsGroupComponent } from '../components/header-details-group/header-details-group.component';
+
+
 
 @Component({
   selector: 'app-detalhes-do-grupo',
   standalone: true,
-  imports: [BannerDetailsGroupsComponent, MatInputModule, MatFormFieldModule, MatSlideToggleModule, MatButtonModule],
+  imports: [BannerDetailsGroupsComponent, MatInputModule, MatFormFieldModule, MatSlideToggleModule, MatButtonModule, HeaderDetailsGroupComponent],
   templateUrl: './detalhes-do-grupo.component.html',
   styleUrl: './detalhes-do-grupo.component.css'
 })
