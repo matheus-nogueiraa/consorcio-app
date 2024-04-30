@@ -164,4 +164,16 @@ html .mat-mdc-fab.mat-primary {
   .mdc-text-field--no-label .mat-mdc-form-field-infix {
     font-size: 14px;
 }
+
+.form2 .mat-mdc-raised-button.mat-primary{
+  display: flex;
+  height: 2rem;
+  padding: 0rem 1rem;
+  width: 100%;
+  border-radius: 2.25rem;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  align-self: stretch;
+}
 }
