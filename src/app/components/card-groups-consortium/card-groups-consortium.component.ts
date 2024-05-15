@@ -14,4 +14,5 @@ export class CardGroupsConsortiumComponent {
   @Input() valorParcelas?: string;
   @Input() totalParcelas?: string;
   @Input() backgroundColor?: string;
+  @Input() max_price?: string;
 }

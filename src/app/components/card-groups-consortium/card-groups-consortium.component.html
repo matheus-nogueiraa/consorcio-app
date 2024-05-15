@@ -1,9 +1,9 @@
 <div class="card" [style.background-color]="{'background-color': backgroundColor}">
-  <p>icone</p>
+  <p style="margin-bottom: 10px;">Valor máximo: {{ max_price }}</p>
   <hr>
-  <h3>{{ title }}</h3>
-  <p>Valor total de créditos: {{ totalCreditos }}</p>
-  <p>Valor das parcelas: {{ valorParcelas }}</p>
-  <p>Total de parcelas: {{ totalParcelas }}</p>
-  <button mat-stroked-button>Ver grupos</button>
+  <h3 style="margin-bottom: 20px;">{{ title }}</h3>
+  <p style="margin-bottom: 20px;">Valor total de créditos: <br> {{ totalCreditos }}</p>
+  <p style="margin-bottom: 20px;">Valor das parcelas: <br> {{ valorParcelas }}</p>
+  <p >Total de parcelas: <br> {{ totalParcelas }}</p>
+  <div><button mat-stroked-button>Ver grupos</button></div>
 </div>
