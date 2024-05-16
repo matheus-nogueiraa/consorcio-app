@@ -1,9 +1,14 @@
-<div class="card" [style.background-color]="{'background-color': backgroundColor}">
-  <p style="margin-bottom: 10px;">Valor máximo: {{ max_price }}</p>
-  <hr>
-  <h3 style="margin-bottom: 20px;">{{ title }}</h3>
-  <p style="margin-bottom: 20px;">Valor total de créditos: <br> {{ totalCreditos }}</p>
-  <p style="margin-bottom: 20px;">Valor das parcelas: <br> {{ valorParcelas }}</p>
-  <p >Total de parcelas: <br> {{ totalParcelas }}</p>
-  <div><button mat-stroked-button>Ver grupos</button></div>
+<div class="card">
+  <div class="header" [style.background-color]="backgroundColor">
+    <mat-icon class="large">monetization_on_outline</mat-icon>
+  </div>
+  <h3 class="text-left">{{ title }}</h3>
+  <div class="main">
+    <p class="text-left">Valor total de créditos: <br> {{ totalCreditos }}</p>
+    <p class="text-left">Valor das parcelas: <br> {{ valorParcelas }}</p>
+    <p class="text-left">Total de parcelas: <br> {{ totalParcelas }}</p>
+  </div>
+  <div class="footer">
+    <button mat-stroked-button>Ver grupos</button>
+  </div>
 </div>
