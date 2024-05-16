@@ -26,7 +26,7 @@ export class CardGroupsConsortiumComponent {
     } else if (price <= 10000) {
       return '#2b5278';
     } else {
-      return '#defaultColor'; // substitua 'defaultColor' pela cor que você deseja usar como padrão
+      return '#61787b'; 
     }
   }
 }
