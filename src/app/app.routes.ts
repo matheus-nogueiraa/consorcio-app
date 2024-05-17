@@ -6,6 +6,9 @@ import { BannerDetailsGroupsComponent } from './components/banner-details-groups
 import { FormDetailsGroupsComponent } from './components/form-details-groups/form-details-groups.component';
 import { RegisterScreenComponent } from './register-screen/register-screen.component';
 import { LoginScreenComponent } from './login-screen/login-screen.component';
+import { DetalhesDoGrupoComponent } from './detalhes-do-grupo/detalhes-do-grupo.component';
+import { DetalhesDoGrupoUsuarioComponent } from './detalhes-do-grupo-usuario/detalhes-do-grupo-usuario.component';
+
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -15,6 +18,8 @@ export const routes: Routes = [
   { path: 'formdetailsgroups', component: FormDetailsGroupsComponent},
   { path: 'register', component: RegisterScreenComponent},
   { path: 'login', component: LoginScreenComponent},
+  { path: 'detalhesdogrupo', component: DetalhesDoGrupoComponent},
+  { path: 'detalhesdogrupousuario', component: DetalhesDoGrupoUsuarioComponent},
   ];
 
 export class AppRoutingModule { }
