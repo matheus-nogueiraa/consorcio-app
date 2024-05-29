@@ -16,7 +16,8 @@
 }
 
 .card {
-  width: 220px;
+  width: 237px;
+  background-color: white;
   border: 1px solid #46464618;
   border-radius: 30px;
   display: flex;
@@ -30,6 +31,10 @@
   align-items: flex-start;
 }
 
+h3{
+  margin-top: 20px;
+  font-weight: 500;
+}
 
 .main {
   margin-left: 10px;
@@ -37,6 +42,7 @@
   flex-direction: column;
   justify-content: center;
   text-align: justify;
+  width: 90%;
 }
 
 .footer {
@@ -51,5 +57,10 @@
 }
 
 button[mat-stroked-button] {
-  border-radius: 115px; 
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.726);
 }

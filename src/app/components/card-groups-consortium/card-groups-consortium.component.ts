@@ -1,11 +1,12 @@
 import { Component, Input } from '@angular/core';
+import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 
 @Component({
   selector: 'app-card-groups-consortium',
   standalone: true,
-  imports: [MatButtonModule, MatIcon],
+  imports: [MatButtonModule, MatIcon, RouterOutlet, RouterLink, RouterLinkActive],
   templateUrl: './card-groups-consortium.component.html',
   styleUrl: './card-groups-consortium.component.css'
 })
@@ -26,7 +27,7 @@ export class CardGroupsConsortiumComponent {
     } else if (price <= 10000) {
       return '#2b5278';
     } else {
-      return '#61787b'; 
+      return '#61787b';
     }
   }
 }
