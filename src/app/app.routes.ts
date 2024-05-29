@@ -11,7 +11,7 @@ import { TrackPaymentsComponent } from './views/track-payments/track-payments.co
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'groups', component: GroupsComponent },
+  { path: 'create-groups', component: GroupsComponent },
   { path: 'register', component: RegisterScreenComponent},
   { path: 'login', component: LoginScreenComponent},
   { path: 'detalhes-do-grupo', component: DetalhesDoGrupoComponent},
