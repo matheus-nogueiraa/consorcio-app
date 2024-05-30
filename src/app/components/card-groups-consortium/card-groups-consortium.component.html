@@ -1,0 +1,14 @@
+<div class="card">
+  <div class="header" [style.background-color]="backgroundColor">
+    <mat-icon class="large">monetization_on_outline</mat-icon>
+  </div>
+  <h3 class="text-left">{{ title }}</h3>
+  <div class="main">
+    <p class="text-left">Valor total de créditos: <br> {{ totalCreditos }}</p>
+    <p class="text-left">Valor das parcelas: <br> {{ valorParcelas }}</p>
+    <p class="text-left">Total de parcelas: <br> {{ totalParcelas }}</p>
+  </div>
+  <div class="footer">
+    <button mat-stroked-button routerLink="/detalhes-do-grupo" routerLinkActive="active">Ver grupos</button>
+  </div>
+</div>

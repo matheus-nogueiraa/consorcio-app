@@ -1,0 +1,34 @@
+<app-header-details-group></app-header-details-group>
+<app-banner
+[backgroundColor]="'#2B5278'"
+[title]="'Acompanhar Pagamentos '"
+></app-banner>
+<app-card>
+  <div class="content">
+    <h1>Resumo pagamentos</h1>
+    <span style="display: flex; justify-content: space-between;">
+      <p>total pago</p>
+      <p>R$ 1000,00</p>
+    </span>
+    <span style="display: flex; justify-content: space-between;">
+      <p>total pendente</p>
+      <p>R$ 500,00</p>
+    </span>
+    <span style="display: flex; justify-content: space-between;">
+      <p>total atrasado </p>
+      <p>R$ 1000,00</p>
+    </span>
+  </div>
+</app-card>
+<app-card>
+  <div class="content">
+    <h1>Boletos</h1>
+    <app-historic-payments ></app-historic-payments>
+    <app-historic-payments ></app-historic-payments>
+    <app-historic-payments ></app-historic-payments>
+    <app-historic-payments ></app-historic-payments>
+  </div>
+  <div>
+    <button class="start" mat-flat-button>VER TODOS</button>
+  </div>
+</app-card>

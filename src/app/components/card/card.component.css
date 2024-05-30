@@ -1,0 +1,17 @@
+.card {
+  border: 1px solid #00000031;
+  /*Bordadocard*/padding: 20px;
+  /*Espaçamentointernodocard*/box-shadow: 0 0 10px rgba(0, 0, 0, 0.247);
+  /*Sombradocard*/margin-left: auto;
+  margin-right: auto;
+  width: 50rem;
+  padding: 1.5rem;
+  margin-top: 25px;
+  border-radius: 20px;
+  text-align: center;
+  background-color: white;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}

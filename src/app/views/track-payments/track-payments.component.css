@@ -1,0 +1,27 @@
+.content {
+  text-align: justify;
+  
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: 500;
+}
+
+p {
+  font-size: 1.2em;
+}
+
+button[mat-flat-button] {
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+  width: 100%;
+  background-color: #BF5C45;
+  color: white;
+  top: 50%;
+  height: 48px;
+  margin-top: 14px;
+}
