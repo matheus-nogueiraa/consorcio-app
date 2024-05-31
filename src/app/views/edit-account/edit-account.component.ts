@@ -42,5 +42,6 @@ export class EditAccountComponent {
       this.errorMessage = '';
     }
 }
+value = 'fulano@mail.com';
 
 }

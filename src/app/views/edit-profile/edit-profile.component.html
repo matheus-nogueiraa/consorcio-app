@@ -1,9 +1,8 @@
 <app-header-account-profile></app-header-account-profile>
-
 <div class="wrapper">
 
   <div class="banner">
-    <h2>Editar Perfil</h2>
+    <h2>Editar Conta</h2>
   </div>
   <!-- Desktop form -->
 <div class="content">
@@ -11,14 +10,40 @@
     <form fxLayout="row wrap" fxLayoutAlign="space-between">
       <div class="container">
         <div class="form-field-login">
-          <p>E-mail</p>
+          <p>Nome</p>
           <mat-form-field>
-
-
+            <input matInput value="Fulano da Silva">
+            <mat-icon matSuffix>mode_edit</mat-icon>
           </mat-form-field>
-          <p>Senha</p>
-          <mat-form-field>
 
+          <p>Telefone</p>
+          <mat-form-field>
+            <input type="tel" matInput value="(62) 9 1234-5678">
+            <mat-icon matSuffix>mode_edit</mat-icon>
+          </mat-form-field>
+
+          <p>Endereço</p>
+          <mat-form-field>
+            <textarea matInput>Rua tal Setor Não Sei O que</textarea>
+            <mat-icon matSuffix>mode_edit</mat-icon>
+          </mat-form-field>
+
+          <p>Complemento</p>
+          <mat-form-field>
+            <textarea matInput placeholder="Vazio"></textarea>
+            <mat-icon matSuffix>mode_edit</mat-icon>
+          </mat-form-field>
+
+          <p>Estado</p>
+          <mat-form-field>
+            <input matInput value="GO">
+            <mat-icon matSuffix>mode_edit</mat-icon>
+          </mat-form-field>
+
+          <p>Cidade</p>
+          <mat-form-field>
+            <input matInput value="Goiânia">
+            <mat-icon matSuffix>mode_edit</mat-icon>
           </mat-form-field>
         </div>
       </div>

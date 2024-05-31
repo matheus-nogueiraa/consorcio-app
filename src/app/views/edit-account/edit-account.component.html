@@ -13,14 +13,14 @@
           <p>E-mail</p>
           <mat-form-field>
             <input matInput
-                   placeholder="fulano@mail.com"
                    [formControl]="email"
+                   [(ngModel)]="value"
                    (blur)="updateErrorMessage()"
                    required>
             @if (email.invalid) {
               <mat-error>{{errorMessage}}</mat-error>
             }
-
+            <mat-icon matSuffix>mode_edit</mat-icon>
           </mat-form-field>
           <p>Senha</p>
           <mat-form-field>
