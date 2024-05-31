@@ -42,7 +42,5 @@ export class EditAccountComponent {
       this.errorMessage = '';
     }
 }
-openExternalLink(): void {
-  window.open('https://wa.me/5562981687434', '_blank');
-}
+
 }
