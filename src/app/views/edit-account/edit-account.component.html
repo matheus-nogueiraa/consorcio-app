@@ -13,18 +13,18 @@
           <p>E-mail</p>
           <mat-form-field>
             <input matInput
-                   placeholder="Digite seu e-mail"
                    [formControl]="email"
+                   [(ngModel)]="value"
                    (blur)="updateErrorMessage()"
                    required>
             @if (email.invalid) {
               <mat-error>{{errorMessage}}</mat-error>
             }
-
+            <mat-icon matSuffix>mode_edit</mat-icon>
           </mat-form-field>
           <p>Senha</p>
           <mat-form-field>
-            <input matInput [type]="hide ? 'password' : 'text'" placeholder="Digite sua senha">
+            <input matInput [type]="hide ? 'password' : 'text'" placeholder="Digite sua nova senha">
             <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
               <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
             </button>
