@@ -1,10 +1,11 @@
 .main {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: flex-start;
   margin-top: 40px;
   margin-left: auto;
   margin-right: auto;
-  max-width: 874px;
-
+  max-width: 834px;
+  flex-wrap: wrap;
+  gap: 24px;
 }
