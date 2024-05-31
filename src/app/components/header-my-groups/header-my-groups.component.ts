@@ -12,5 +12,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrls: ['./header-my-groups.component.css']
 })
 export class HeaderMyGroupsComponent {
-
+  openExternalLink(): void {
+    window.open('https://wa.me/5562981687434', '_blank');
+  }
 }
