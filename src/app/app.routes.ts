@@ -9,6 +9,8 @@ import { ConsortiumDetailsComponent } from './views/consortium-details/consortiu
 import { MyGroupsComponent } from './views/my-groups/my-groups.component';
 import { TrackPaymentsComponent } from './views/track-payments/track-payments.component';
 import {OptionsComponent} from "./views/options/options.component";
+import { EditAccountComponent } from './views/edit-account/edit-account.component';
+
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -20,7 +22,8 @@ export const routes: Routes = [
   { path: 'consortium-details', component: ConsortiumDetailsComponent },
   { path: 'my-groups', component: MyGroupsComponent },
   { path: 'track-payments', component: TrackPaymentsComponent },
-  { path: 'options', component: OptionsComponent }
+  { path: 'options', component: OptionsComponent },
+  { path: 'edit-account', component: EditAccountComponent }
   ];
 
 export class AppRoutingModule { }
