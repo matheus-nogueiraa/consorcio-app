@@ -11,5 +11,7 @@ import {MatButtonModule} from '@angular/material/button';
   styleUrls: ['./header-details-group.component.css']
 })
 export class HeaderDetailsGroupComponent {
-
+  openExternalLink(): void {
+    window.open('https://wa.me/5562981687434', '_blank');
+  }
 }
