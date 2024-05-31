@@ -1,17 +1,17 @@
 .card {
   border: 1px solid #00000031;
-  /*Bordadocard*/padding: 20px;
-  /*Espaçamentointernodocard*/box-shadow: 0 0 10px rgba(0, 0, 0, 0.247);
-  /*Sombradocard*/margin-left: auto;
+  padding: 20px;
+  box-shadow: 0px 10px 13px 0px rgba(0, 0, 0, 0.20);
+  margin-left: auto;
   margin-right: auto;
-  width: 50rem;
+  width: 784px;
   padding: 1.5rem;
-  margin-top: 25px;
-  border-radius: 20px;
+  margin-top: 32px;
+  border-radius: 30px;
   text-align: center;
   background-color: white;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
 }

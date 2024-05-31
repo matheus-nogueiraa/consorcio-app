@@ -1,11 +1,14 @@
 .content {
   text-align: justify;
-  
+  padding: 20px;
 }
 
 h1 {
-  font-size: 2em;
+  font-size: 34px;
+  font-style: normal;
   font-weight: 500;
+  line-height: 40px;
+  letter-spacing: 0.25px;
 }
 
 p {

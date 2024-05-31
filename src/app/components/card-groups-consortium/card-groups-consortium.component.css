@@ -1,6 +1,6 @@
 .header {
   border: 1px solid #e0e0e0;
-  height: 53px; /* Aumente a altura para acomodar o novo tamanho do ícone */
+  height: 53px;
   width: 100%;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
@@ -16,15 +16,21 @@
 }
 
 .card {
-  width: 237px;
+  width: 260px;
   background-color: white;
   border: 1px solid #46464618;
   border-radius: 30px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0px 7px 9px 0px rgba(0, 0, 0, 0.20);
+  height: 383px;
+}
+
+.card p{
+  margin: 0;
+  font-size: 16px;
 }
 
 .text-left {
@@ -32,21 +38,26 @@
 }
 
 h3{
-  margin-top: 20px;
   font-weight: 500;
+  font-size: 20px;
+  max-width: 90%;
+  line-height: 24px;
+  text-align: center;
 }
 
 .main {
-  margin-left: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: justify;
   width: 90%;
+  gap: 20px;
 }
 
+
 .footer {
-  height: 70px;
+  margin-top: 16px;
+  margin-bottom: 16px;
   width: 100%;
   display: flex;
   flex-direction: column;

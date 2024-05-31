@@ -5,30 +5,31 @@
 ></app-banner>
 <app-card>
   <div class="content">
-    <h1>Resumo pagamentos</h1>
+    <h1>Resumo de Pagamentos</h1>
     <span style="display: flex; justify-content: space-between;">
-      <p>total pago</p>
+      <p>Total Pago</p>
       <p>R$ 1000,00</p>
     </span>
     <span style="display: flex; justify-content: space-between;">
-      <p>total pendente</p>
+      <p>Total Pendente</p>
       <p>R$ 500,00</p>
     </span>
     <span style="display: flex; justify-content: space-between;">
-      <p>total atrasado </p>
-      <p>R$ 1000,00</p>
+      <p>Total Atrasado</p>
+      <p>R$ 500,00</p>
     </span>
   </div>
 </app-card>
 <app-card>
   <div class="content">
     <h1>Boletos</h1>
-    <app-historic-payments ></app-historic-payments>
-    <app-historic-payments ></app-historic-payments>
-    <app-historic-payments ></app-historic-payments>
-    <app-historic-payments ></app-historic-payments>
-  </div>
-  <div>
-    <button class="start" mat-flat-button>VER TODOS</button>
+    <app-not-paid></app-not-paid>
+    <app-not-paid></app-not-paid>
+    <app-not-paid></app-not-paid>
+    <app-paid></app-paid>
+    <app-paid></app-paid>
+    <div>
+      <button class="start" mat-flat-button>VER TODOS</button>
+    </div>
   </div>
 </app-card>
