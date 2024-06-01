@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class VisibilityService {
-  private showComponent: boolean = true; 
+  private showComponent: boolean = true;
 
   constructor() { }
 
