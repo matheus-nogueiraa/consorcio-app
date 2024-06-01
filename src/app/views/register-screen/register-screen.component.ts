@@ -21,7 +21,9 @@ import { MatIconModule } from '@angular/material/icon';
         useValue: {showError: false},
       },
     ],
-    imports: [MatStepperModule, ReactiveFormsModule, MatFormFieldModule,MatInputModule, MatButtonModule, MatInputModule,FormsModule, RouterOutlet, RouterLink, RouterLinkActive,MatIconModule]
+    imports: [MatStepperModule, ReactiveFormsModule, MatFormFieldModule,
+      MatInputModule, MatButtonModule, MatInputModule,FormsModule,
+      RouterOutlet, RouterLink, RouterLinkActive,MatIconModule]
 })
 export class RegisterScreenComponent {
 
