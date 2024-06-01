@@ -5,9 +5,7 @@ import { CreateGroupsComponent } from './views/create-groups/create-groups.compo
 import { HeaderDetailsGroupComponent } from "./components/header-details-group/header-details-group.component";
 import { CommonModule } from '@angular/common';
 import { VisibilityService } from './services/visibility.service';
-import { gsap } from 'gsap';
-import { filter } from 'rxjs';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
 
 @Component({
     selector: 'app-root',
