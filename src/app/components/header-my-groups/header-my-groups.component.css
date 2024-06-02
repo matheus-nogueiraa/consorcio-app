@@ -17,7 +17,7 @@
   width: 50rem;
   display: flex;
   flex-direction: row;
-  justify-content: space-between; 
+  justify-content: space-between;
 }
 
 .container-left {
@@ -127,3 +127,5 @@
   color: white !important;
   background: var(--Azul-Petrleo-Azul-Petrleo, #2B5278) !important;
 }
+
+
