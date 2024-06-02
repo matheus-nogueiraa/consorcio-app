@@ -250,3 +250,46 @@ html .mat-mdc-fab.mat-primary {
   -o-border-radius: 36px;
 }
 
+.mat-mdc-menu-content {
+  text-align: center !important;
+  display: flex;
+  padding: 8px !important;
+  align-items: center;
+  flex-direction: column;
+  width: 184px;
+  border-radius: 20px !important;
+  -webkit-border-radius: 20px !important;
+  -moz-border-radius: 20px !important;
+  -ms-border-radius: 20px !important;
+  -o-border-radius: 20px !important;
+}
+
+.mat-mdc-menu-panel {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  box-sizing: border-box;
+  outline: 0;
+  border-radius: 20px !important;
+  background-color: var(--mat-menu-container-color);
+  will-change: transform, opacity;
+  -webkit-border-radius: 20px !important;
+  -moz-border-radius: 20px !important;
+  -ms-border-radius: 20px !important;
+  -o-border-radius: 20px !important;
+}
+
+.mat-mdc-menu-item {
+  padding: 0px 16px !important;
+  text-align: center !important;
+  text-transform: uppercase;
+  align-items: center !important;
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+}
+
+.filterHeader .mat-button-toggle-appearance-standard .mat-button-toggle-label-content {
+  padding: 8px 16px;
+}

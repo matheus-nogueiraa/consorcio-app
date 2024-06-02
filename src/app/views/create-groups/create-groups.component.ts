@@ -3,14 +3,17 @@ import { HeaderDetailsGroupComponent } from "../../components/header-details-gro
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { MatButtonModule } from '@angular/material/button'
+import {MatIconModule} from '@angular/material/icon';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatButtonModule} from '@angular/material/button';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
     selector: 'app-create-groups',
     standalone: true,
     templateUrl: './create-groups.component.html',
     styleUrl: './create-groups.component.css',
-    imports: [HeaderDetailsGroupComponent, MatInputModule, MatFormFieldModule,MatSlideToggleModule,MatButtonModule]
+    imports: [HeaderDetailsGroupComponent, MatInputModule, MatFormFieldModule,MatSlideToggleModule,MatButtonModule, MatIconModule, MatTooltipModule, RouterLink, RouterLinkActive]
 })
 export class CreateGroupsComponent {
   nomeGrupo: string = "";
@@ -28,5 +31,9 @@ export class CreateGroupsComponent {
       quantidadeParticipantes: this.quantidadeParticipantes,
       grupoFechado: this.grupoFechado
     });
+  }
+
+  openExternalLink(): void {
+    window.open('https://wa.me/5562981687434', '_blank');
   }
 }
