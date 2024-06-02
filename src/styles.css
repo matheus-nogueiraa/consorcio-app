@@ -293,3 +293,19 @@ html .mat-mdc-fab.mat-primary {
 .filterHeader .mat-button-toggle-appearance-standard .mat-button-toggle-label-content {
   padding: 8px 16px;
 }
+
+.mdc-dialog__surface{
+  border-radius: 20px !important;
+  -webkit-border-radius: 20px !important;
+  -moz-border-radius: 20px !important;
+  -ms-border-radius: 20px !important;
+  -o-border-radius: 20px !important;
+}
+
+
+.modalIdGrupo .mat-mdc-button {
+  border-radius: 20px !important;
+  padding: 0px 16px !important;
+}
+
+
