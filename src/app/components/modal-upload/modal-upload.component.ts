@@ -6,13 +6,14 @@ import {MatInputModule} from '@angular/material/input';
 import {FormsModule} from '@angular/forms';
 
 @Component({
-  selector: 'app-modal-id-grupo',
+  selector: 'app-modal-upload',
   standalone: true,
   imports: [MatDialogModule, MatButtonModule, MatFormFieldModule, MatInputModule, FormsModule],
-  templateUrl: './modal-id-grupo.component.html',
-  styleUrl: './modal-id-grupo.component.css'
+  templateUrl: './modal-upload.component.html',
+  styleUrl: './modal-upload.component.css'
 })
-export class ModalIdGrupoComponent {
-  constructor(public dialogRef: MatDialogRef<ModalIdGrupoComponent>) {
+export class ModalUploadComponent {
+  constructor(public dialogRef: MatDialogRef<ModalUploadComponent>) {
+
   }
 }
