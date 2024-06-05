@@ -58,31 +58,31 @@
   </div>
 </app-card>
 <app-card>
-  <div class="content-options">
+  <div class="content-options" *ngFor="let dado of dados">
     <h1>Perfil</h1>
-    <span >
+    <span>
       <p>Nome</p>
-      <p>Fulano da Silva</p>
+      <p>{{dado.name}}</p>
     </span>
     <span>
       <p>Telefone</p>
-      <p>(62) 9 1234-5678</p>
+      <p>{{dado.phone}}</p>
     </span>
     <span>
       <p>Endereço</p>
-      <p>Rua tal Setor Não Sei O Que</p>
+      <p>{{dado.address}}</p>
     </span>
     <span>
       <p>Complemento</p>
-      <p>Vazio</p>
+      <p>{{dado.complement}}</p>
     </span>
     <span>
       <p>Estado</p>
-      <p>GO</p>
+      <p>{{dado.state}}</p>
     </span>
     <span>
       <p>Cidade</p>
-      <p>Goiânia</p>
+      <p>{{dado.city}}</p>
     </span>
   </div>
 </app-card>
