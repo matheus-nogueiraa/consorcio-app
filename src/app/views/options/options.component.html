@@ -40,16 +40,16 @@
 [title]="'Opções'"
 ></app-banner>
 <app-card>
-  <div class="content-options">
+  <div class="content-options" *ngFor="let dado of dados">
     <h1>Conta</h1>
     <span>
       <p>E-mail</p>
-      <p>fulano&#64;mail.com</p>
+      <p>{{dado.email}}</p>
     </span>
     <span>
       <p>Senha</p>
       <mat-form-field>
-        <input matInput [type]="hide ? 'password' : 'text'" [value]="senhaAtual" readonly>
+        <input matInput [type]="hide ? 'password' : 'text'" [value]="dado.password" readonly>
         <button mat-icon-button matSuffix (click)="toggleHide()">
           <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
         </button>
@@ -66,7 +66,7 @@
     </span>
     <span>
       <p>Telefone</p>
-      <p>{{dado.phone}}</p>
+      <p>{{ formatPhoneNumber(dado.phone) }}</p>
     </span>
     <span>
       <p>Endereço</p>

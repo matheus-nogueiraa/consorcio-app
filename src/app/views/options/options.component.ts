@@ -22,7 +22,6 @@ import { CommonModule } from '@angular/common';
 })
 export class OptionsComponent {
   hide = true;
-  senhaAtual = 'testedesenha';
 
   dados: Signup[] = [];
 
@@ -40,5 +39,13 @@ export class OptionsComponent {
   obterDadosUsuario() {
     this.ApiService.getUsers()
     .subscribe(dados => this.dados = dados)
+  }
+
+  formatPhoneNumber(phone: string): string {
+    const match = phone.match(/^(\d{2})(\d{1})(\d{4})(\d{4})$/);
+    if (match) {
+      return `(${match[1]}) ${match[2]} ${match[3]}-${match[4]}`;
+    }
+    return phone;
   }
 }
