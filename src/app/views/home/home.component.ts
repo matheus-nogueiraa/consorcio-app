@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
 
   filterCategoryControl = new FormControl('');
   filterCategory?: string;
-  
+
 
   scrollToSection(): void {
     const targetSection = document.querySelector('#category');
