@@ -10,7 +10,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatButtonModule} from '@angular/material/button';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { ApiService } from '../../services/api.service';
-import { Signup } from '../../../models/User/signup.model';
+import { User } from '../../../models/User/signup.model';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -23,7 +23,7 @@ import { CommonModule } from '@angular/common';
 export class OptionsComponent {
   hide = true;
 
-  dados: Signup[] = [];
+  dados: User[] = [];
 
   toggleHide() {
     this.hide = !this.hide;

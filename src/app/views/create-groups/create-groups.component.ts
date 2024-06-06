@@ -7,6 +7,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatButtonModule} from '@angular/material/button';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { CreateGroup } from '../../../models/Create-Group/createGroup.model';
 
 @Component({
     selector: 'app-create-groups',
@@ -16,6 +17,8 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
     imports: [HeaderDetailsGroupComponent, MatInputModule, MatFormFieldModule,MatSlideToggleModule,MatButtonModule, MatIconModule, MatTooltipModule, RouterLink, RouterLinkActive]
 })
 export class CreateGroupsComponent {
+
+  
   nomeGrupo: string = "";
   valorParcelas: number = 0;
   valorCreditos: number = 0;
@@ -36,4 +39,6 @@ export class CreateGroupsComponent {
   openExternalLink(): void {
     window.open('https://wa.me/5562981687434', '_blank');
   }
+
+  dados: CreateGroup[] = []
 }
