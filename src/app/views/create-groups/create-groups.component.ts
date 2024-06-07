@@ -8,33 +8,49 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatButtonModule} from '@angular/material/button';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { CreateGroup } from '../../../models/Create-Group/createGroup.model';
+import { ApiService } from '../../services/api.service';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule, FormsModule, FormControl } from '@angular/forms';
 
 @Component({
-    selector: 'app-create-groups',
-    standalone: true,
-    templateUrl: './create-groups.component.html',
-    styleUrl: './create-groups.component.css',
-    imports: [HeaderDetailsGroupComponent, MatInputModule, MatFormFieldModule,MatSlideToggleModule,MatButtonModule, MatIconModule, MatTooltipModule, RouterLink, RouterLinkActive]
+  selector: 'app-create-groups',
+  standalone: true,
+  templateUrl: './create-groups.component.html',
+  styleUrl: './create-groups.component.css',
+  imports: [HeaderDetailsGroupComponent, MatInputModule, MatFormFieldModule,
+    MatSlideToggleModule,MatButtonModule, MatIconModule, MatTooltipModule, RouterLink, RouterLinkActive, ]
 })
 export class CreateGroupsComponent {
 
-  
-  nomeGrupo: string = "";
-  valorParcelas: number = 0;
-  valorCreditos: number = 0;
-  quantidadeParticipantes: number = 0;
-  grupoFechado: boolean = false;
+  grupoForm: FormGroup;
+  apiService: any;
 
-  criarGrupo() {
-
-    console.log('Dados do grupo enviados:', {
-      nomeGrupo: this.nomeGrupo,
-      valorParcelas: this.valorParcelas,
-      valorCreditos: this.valorCreditos,
-      quantidadeParticipantes: this.quantidadeParticipantes,
-      grupoFechado: this.grupoFechado
+  constructor() {
+    this.grupoForm = new FormGroup({
+      nomeGrupo: new FormControl(''),
+      valorParcelas: new FormControl(0),
+      valorCreditos: new FormControl(0),
+      quantidadeParticipantes: new FormControl(0),
+      grupoFechado: new FormControl(false)
     });
   }
+
+  criarGrupo() {
+    console.log(this.grupoForm.value);
+    this.apiService.postGroup(this.grupoForm).subscribe(() => {
+      console.log('Grupo criado com sucesso!');
+    }, (error: any) => {
+      console.error('Erro ao criar grupo:', error);
+    });
+  }
+
+
+    /*
+    this.apiService.postGroup(groupData).subscribe((response) => {
+      console.log('Grupo criado com sucesso!');
+    }, (error) => {
+      console.error('Erro ao criar grupo:', error);
+    });*/
+  
 
   openExternalLink(): void {
     window.open('https://wa.me/5562981687434', '_blank');

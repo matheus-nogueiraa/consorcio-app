@@ -19,7 +19,7 @@ export class ApiService {
     return this.httpClient.get<User[]>(`${this.url}/users`);
   }
 
-  setGroup(groupData: CreateGroup): Observable<CreateGroup> {
-    return this.httpClient.post<CreateGroup>(`${this.url}/create-group`, groupData);
+  postGroup(groupData: CreateGroup): Observable<CreateGroup> {
+    return this.httpClient.post<CreateGroup>(`${this.url}/groups/1/create`, groupData);
   }
 }

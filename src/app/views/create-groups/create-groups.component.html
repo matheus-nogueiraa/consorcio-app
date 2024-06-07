@@ -42,7 +42,7 @@
     </section>
 </header>
 
-<div class="wrapper">
+<div class="wrapper" (ngSubmit)="criarGrupo">
   <div class="banner">
     <h2>Criação de Grupos</h2>
     <p>Crie seu grupo personalizado</p>
@@ -50,7 +50,7 @@
 
   <div class="content" >
     <div class="form" fxLayout="column">
-      <form fxLayout="row wrap" fxLayoutAlign="space-between">
+      <form fxLayout="row wrap" fxLayoutAlign="space-between" >
         <!-- Grupo 1 -->
         <div class="container">
         <div class="form-field" >
