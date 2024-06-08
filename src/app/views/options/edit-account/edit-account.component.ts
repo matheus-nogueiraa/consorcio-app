@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { VisibilityService } from '../../services/visibility.service';
+import { VisibilityService } from '../../../services/visibility.service';
 import { Validators, FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -8,8 +8,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import {takeUntilDestroyed} from '@angular/core/rxjs-interop';
 import {merge} from 'rxjs';
 import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
-import { HeaderMyGroupsComponent } from "../../components/header-my-groups/header-my-groups.component";
-import { HeaderAccountProfileComponent } from "../../components/header-account-profile/header-account-profile.component";
+import { HeaderMyGroupsComponent } from "../../../components/header-my-groups/header-my-groups.component";
+import { HeaderAccountProfileComponent } from "../../../components/header-account-profile/header-account-profile.component";
 
 @Component({
     selector: 'app-edit-account',

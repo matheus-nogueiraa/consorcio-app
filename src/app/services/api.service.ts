@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
-import { Signup } from '../../models/User/signup.model';
+import { User } from '../../models/User/user.model';
+import { UpdateUser } from '../../models/User/update-user.model';
 
 
 @Injectable({
@@ -14,6 +15,13 @@ export class ApiService {
 
 
   getUsers(){
-    return this.httpClient.get<Signup[]>(`${this.url}/users`);
+    return this.httpClient.get<User[]>(`${this.url}/users`);
   }
+
+  updateUser(userId: number, updateUser: UpdateUser) {
+    return this.httpClient.put<UpdateUser>(`${this.url}/users/${userId}/update`, updateUser);
+  }
+
+
+
 }

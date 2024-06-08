@@ -40,7 +40,7 @@
 [title]="'Opções'"
 ></app-banner>
 <app-card>
-  <div class="content-options" *ngFor="let dado of dados">
+  <div class="content-options" *ngFor="let dado of dados$ | async">
     <h1>Conta</h1>
     <span>
       <p>E-mail</p>
@@ -58,7 +58,7 @@
   </div>
 </app-card>
 <app-card>
-  <div class="content-options" *ngFor="let dado of dados">
+  <div class="content-options" *ngFor="let dado of dados$ | async">
     <h1>Perfil</h1>
     <span>
       <p>Nome</p>

@@ -7,53 +7,53 @@
   <!-- Desktop form -->
 <div class="content">
   <div class="form" fxLayout="column">
-    <form fxLayout="row wrap" fxLayoutAlign="space-between">
+    <form fxLayout="row wrap" fxLayoutAlign="space-between"  #profileForm="ngForm">
       <div class="container">
-        <div class="form-field-login">
+        <div class="form-field-login" *ngFor="let dado of dados$ | async">
           <p>Nome</p>
           <mat-form-field>
-            <input matInput value="Fulano da Silva">
+            <input matInput placeholder="{{dado.name}}" [(ngModel)]="name" name="name">
             <mat-icon matSuffix>mode_edit</mat-icon>
           </mat-form-field>
 
           <p>Telefone</p>
           <mat-form-field>
-            <input type="tel" matInput value="(62) 9 1234-5678">
+            <input type="tel" matInput placeholder="{{ formatPhoneNumber(dado.phone)}}" [(ngModel)]="phone" name="phone">
             <mat-icon matSuffix>mode_edit</mat-icon>
           </mat-form-field>
 
           <p>Endereço</p>
           <mat-form-field>
-            <textarea matInput>Rua tal Setor Não Sei O que</textarea>
+            <textarea matInput placeholder="{{dado.address}}" [(ngModel)]="address" name="address"></textarea>
             <mat-icon matSuffix>mode_edit</mat-icon>
           </mat-form-field>
 
           <p>Complemento</p>
           <mat-form-field>
-            <textarea matInput placeholder="Vazio"></textarea>
+            <textarea matInput placeholder="{{dado.complement}}" [(ngModel)]="complement" name="complement"></textarea>
             <mat-icon matSuffix>mode_edit</mat-icon>
           </mat-form-field>
 
           <p>Estado</p>
           <mat-form-field>
-            <input matInput value="GO">
+            <input matInput placeholder="{{dado.state}}" [(ngModel)]="state" name="state">
             <mat-icon matSuffix>mode_edit</mat-icon>
           </mat-form-field>
 
           <p>Cidade</p>
           <mat-form-field>
-            <input matInput value="Goiânia">
+            <input matInput placeholder="{{dado.city}}" [(ngModel)]="city" name="city">
             <mat-icon matSuffix>mode_edit</mat-icon>
           </mat-form-field>
         </div>
       </div>
     </form>
 
-    <!-- Botão
+
     <div class="button">
-      <button mat-raised-button color="primary">ENTRAR</button>
+      <button mat-raised-button color="primary" (click)="updateUser">ATUALIZAR</button>
     </div>
-    -->
+
   </div>
 </div>
 
