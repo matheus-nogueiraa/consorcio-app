@@ -27,7 +27,7 @@ export class EditProfileComponent implements OnInit{
 
   constructor(
     private formActionService: FormActionService,
-    private ApiService: ApiService,
+    private apiService: ApiService,
     private snackBar: MatSnackBar
   ) {
     this.obterDadosUsuario();
@@ -39,11 +39,22 @@ export class EditProfileComponent implements OnInit{
     });
   }
 
-  dados$ = new Observable<User[]>();
+  dados: User = {
+    id: 2,
+    name: '',
+    email: '',
+    password: '',
+    cpf: '',
+    phone: '',
+    address: '',
+    complement: '',
+    state: '',
+    city: '',
+  }
 
   obterDadosUsuario() {
-    this.dados$ = this.ApiService.getUsers();
-
+    this.apiService.getUser()
+      .subscribe(dados => this.dados = dados);
   }
 
 
@@ -68,7 +79,7 @@ export class EditProfileComponent implements OnInit{
       return;
     }
 
-    this.ApiService.updateUser({
+    this.apiService.updateUser({
       name: this.name,
       phone: this.phone,
       address: this.address,
