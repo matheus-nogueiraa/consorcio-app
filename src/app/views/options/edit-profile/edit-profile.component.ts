@@ -59,9 +59,8 @@ export class EditProfileComponent implements OnInit{
       return;
     }
 
-    const userId = 2;
 
-    this.ApiService.updateUser(userId, {
+    this.ApiService.updateUser({
       name: this.name,
       phone: this.phone,
       address: this.address,
@@ -75,6 +74,7 @@ export class EditProfileComponent implements OnInit{
       }
     );
   }
+  
   setDados(dado: User) {
     this.name = dado.name;
     this.phone = dado.phone;
