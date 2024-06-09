@@ -5,7 +5,7 @@ import { CreateGroupsComponent } from './views/create-groups/create-groups.compo
 import { HeaderDetailsGroupComponent } from "./components/header-details-group/header-details-group.component";
 import { CommonModule } from '@angular/common';
 import { VisibilityService } from './services/visibility.service';
-import { HttpClientModule } from '@angular/common/http';
+import {} from '@angular/common/http';
 import { environment } from '../environments/environment';
 import { ApiService } from './services/api.service';
 
@@ -15,7 +15,11 @@ import { ApiService } from './services/api.service';
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
     imports: [RouterOutlet, HomeComponent, CreateGroupsComponent,
-       HeaderDetailsGroupComponent, CommonModule, RouterLink, RouterLinkActive, HttpClientModule],
+       HeaderDetailsGroupComponent, CommonModule, RouterLink, RouterLinkActive, 
+// TODO: `HttpClientModule` should not be imported into a component directly.
+// Please refactor the code to add `provideHttpClient()` call to the provider list in the
+// application bootstrap logic and remove the `HttpClientModule` import from this component.
+HttpClientModule],
     providers: [ApiService, VisibilityService]
 })
 
