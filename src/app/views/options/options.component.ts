@@ -12,7 +12,6 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 import { ApiService } from '../../services/api.service';
 import { User } from '../../../models/User/user.model';
 import { CommonModule } from '@angular/common';
-import { Observable } from 'rxjs';
 
 @Component({
     selector: 'app-options',
@@ -37,7 +36,6 @@ export class OptionsComponent {
     city: '',
   }
 
-  //dados$ = new Observable<User[]>();
 
   toggleHide() {
     this.hide = !this.hide;
