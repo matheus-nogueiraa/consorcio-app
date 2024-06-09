@@ -12,17 +12,24 @@ import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { FormActionService } from "../../../services/formAction.service";
-
+import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarModule, MatSnackBarVerticalPosition} from '@angular/material/snack-bar';
 @Component({
     selector: 'app-edit-profile',
     standalone: true,
     templateUrl: './edit-profile.component.html',
     styleUrl: './edit-profile.component.css',
-    imports: [MatFormFieldModule, HeaderMyGroupsComponent, MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule, RouterOutlet, RouterLink, RouterLinkActive, HeaderMyGroupsComponent, CommonModule, FormsModule, HeaderAccountProfileComponent]
+    imports: [MatFormFieldModule, HeaderMyGroupsComponent, MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule, RouterOutlet, RouterLink, RouterLinkActive, HeaderMyGroupsComponent, CommonModule, FormsModule, HeaderAccountProfileComponent, MatSnackBarModule]
 })
 export class EditProfileComponent implements OnInit{
 
-  constructor(private formActionService: FormActionService, private ApiService: ApiService) {
+  horizontalPosition: MatSnackBarHorizontalPosition = 'center';
+  verticalPosition: MatSnackBarVerticalPosition = 'top';
+
+  constructor(
+    private formActionService: FormActionService,
+    private ApiService: ApiService,
+    private snackBar: MatSnackBar
+  ) {
     this.obterDadosUsuario();
   }
 
@@ -36,7 +43,9 @@ export class EditProfileComponent implements OnInit{
 
   obterDadosUsuario() {
     this.dados$ = this.ApiService.getUsers();
+
   }
+
 
   formatPhoneNumber(phone: string): string {
     const match = phone.match(/^(\d{2})(\d{1})(\d{4})(\d{4})$/);
@@ -59,7 +68,6 @@ export class EditProfileComponent implements OnInit{
       return;
     }
 
-
     this.ApiService.updateUser({
       name: this.name,
       phone: this.phone,
@@ -68,13 +76,25 @@ export class EditProfileComponent implements OnInit{
       state: this.state,
       city: this.city
     })
+
     .subscribe(
       () => {
         this.obterDadosUsuario();
+        this.snackBar.open('Perfil atualizado com sucesso!', 'Fechar', {
+          horizontalPosition: this.horizontalPosition,
+          verticalPosition: this.verticalPosition,
+          duration: 30000
+        });
+      },
+      error => {
+        this.snackBar.open('Erro ao atualizar perfil.', 'Fechar', {
+          horizontalPosition: this.horizontalPosition,
+          verticalPosition: this.verticalPosition,
+          duration: 30000
+        });
       }
     );
   }
-  
   setDados(dado: User) {
     this.name = dado.name;
     this.phone = dado.phone;
