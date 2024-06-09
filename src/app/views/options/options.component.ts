@@ -24,9 +24,21 @@ import { Observable } from 'rxjs';
 export class OptionsComponent {
   hide = true;
 
-  //dados: User[] = [];
-  dados$ = new Observable<User[]>();
-  
+  dados: User = {
+    id: 2,
+    name: '',
+    email: '',
+    password: '',
+    cpf: '',
+    phone: '',
+    address: '',
+    complement: '',
+    state: '',
+    city: '',
+  }
+
+  //dados$ = new Observable<User[]>();
+
   toggleHide() {
     this.hide = !this.hide;
   }
@@ -34,14 +46,14 @@ export class OptionsComponent {
     window.open('https://wa.me/5562981687434', '_blank');
   }
 
-  constructor(private ApiService: ApiService) {
+
+  constructor(private apiService: ApiService) {
     this.obterDadosUsuario();
   }
 
   obterDadosUsuario() {
-    //this.ApiService.getUsers()
-    //.subscribe(dados => this.dados = dados)
-    this.dados$ = this.ApiService.getUsers();
+    this.apiService.getUser()
+      .subscribe(dados => this.dados = dados);
   }
 
   formatPhoneNumber(phone: string): string {
