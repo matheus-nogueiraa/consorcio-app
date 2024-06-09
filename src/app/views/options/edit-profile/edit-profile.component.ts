@@ -59,7 +59,9 @@ export class EditProfileComponent implements OnInit{
       return;
     }
 
-    this.ApiService.updateUser({
+    const userId = 2;
+
+    this.ApiService.updateUser(userId, {
       name: this.name,
       phone: this.phone,
       address: this.address,
