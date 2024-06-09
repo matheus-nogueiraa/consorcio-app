@@ -83,14 +83,14 @@ export class EditProfileComponent implements OnInit{
         this.snackBar.open('Perfil atualizado com sucesso!', 'Fechar', {
           horizontalPosition: this.horizontalPosition,
           verticalPosition: this.verticalPosition,
-          duration: 30000
+          duration: 3000
         });
       },
       error => {
         this.snackBar.open('Erro ao atualizar perfil.', 'Fechar', {
           horizontalPosition: this.horizontalPosition,
           verticalPosition: this.verticalPosition,
-          duration: 30000
+          duration: 3000
         });
       }
     );
