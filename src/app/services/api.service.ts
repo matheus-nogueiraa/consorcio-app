@@ -12,14 +12,14 @@ export class ApiService {
 
   private url = environment.api;
   constructor(private httpClient: HttpClient) { }
-
+  userId = 2;
 
   getUsers(){
-    return this.httpClient.get<User[]>(`${this.url}/users`);
+    return this.httpClient.get<User[]>(`${this.url}/users/${this.userId}`);
   }
 
-  updateUser(userId: number, updateUser: UpdateUser) {
-    return this.httpClient.put<UpdateUser>(`${this.url}/users/${userId}/update`, updateUser);
+  updateUser(updateUser: UpdateUser) {
+    return this.httpClient.put<UpdateUser>(`${this.url}/users/${this.userId}/update`, updateUser);
   }
 
 
