@@ -18,7 +18,9 @@ import { FormActionService } from "../../../services/formAction.service";
     standalone: true,
     templateUrl: './edit-profile.component.html',
     styleUrl: './edit-profile.component.css',
-    imports: [MatFormFieldModule, HeaderMyGroupsComponent, MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule, RouterOutlet, RouterLink, RouterLinkActive, HeaderMyGroupsComponent, CommonModule, FormsModule, HeaderAccountProfileComponent]
+    imports: [MatFormFieldModule, HeaderMyGroupsComponent, MatFormFieldModule,
+       MatInputModule, MatButtonModule, MatIconModule, RouterOutlet, RouterLink,
+       RouterLinkActive, HeaderMyGroupsComponent, CommonModule, FormsModule, HeaderAccountProfileComponent]
 })
 export class EditProfileComponent implements OnInit{
 

@@ -19,7 +19,9 @@ import { Observable } from 'rxjs';
     standalone: true,
     templateUrl: './options.component.html',
     styleUrl: './options.component.css',
-    imports: [HeaderMyGroupsComponent, BannerComponent, CardComponent, MatIconModule, MatFormFieldModule, MatInputModule, FormsModule, MatTooltipModule, MatButtonModule, RouterLink, RouterLinkActive, CommonModule],
+    imports: [HeaderMyGroupsComponent, BannerComponent, CardComponent,
+       MatIconModule, MatFormFieldModule, MatInputModule, FormsModule, MatTooltipModule,
+        MatButtonModule, RouterLink, RouterLinkActive, CommonModule],
 })
 export class OptionsComponent {
   hide = true;
