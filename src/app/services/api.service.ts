@@ -4,6 +4,7 @@ import { environment } from '../../environments/environment';
 import { User } from '../../models/User/user.model';
 import { UpdateUser } from '../../models/User/update-user.model';
 import { Observable } from 'rxjs';
+import { UpdateLogin } from '../../models/User/update-login.model';
 
 
 @Injectable({
@@ -26,5 +27,9 @@ export class ApiService {
 
   updateUser(updateUser: UpdateUser) {
     return this.httpClient.put<UpdateUser>(`${this.url}/users/${this.userId}/update`, updateUser);
+  }
+
+  updateLogin(updateLogin: UpdateLogin) {
+    return this.httpClient.put<UpdateUser>(`${this.url}/users/${this.userId}/updatelogin`, updateLogin);
   }
 }
