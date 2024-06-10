@@ -10,8 +10,9 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatButtonModule} from '@angular/material/button';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { ApiService } from '../../services/api.service';
-import { User } from '../../../models/User/signup.model';
+import { User } from '../../../models/User/user.model';
 import { CommonModule } from '@angular/common';
+import { Observable } from 'rxjs';
 
 @Component({
     selector: 'app-options',
@@ -23,7 +24,10 @@ import { CommonModule } from '@angular/common';
 export class OptionsComponent {
   hide = true;
 
-  dados: User[] = [];
+
+  //dados: User[] = [];
+  dados$ = new Observable<User[]>();
+  
 
   toggleHide() {
     this.hide = !this.hide;
@@ -37,8 +41,9 @@ export class OptionsComponent {
   }
 
   obterDadosUsuario() {
-    this.ApiService.getUsers()
-    .subscribe(dados => this.dados = dados)
+    //this.ApiService.getUsers()
+    //.subscribe(dados => this.dados = dados)
+    this.dados$ = this.ApiService.getUsers();
   }
 
   formatPhoneNumber(phone: string): string {

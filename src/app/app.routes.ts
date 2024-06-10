@@ -9,8 +9,8 @@ import { ConsortiumDetailsComponent } from './views/consortium-details/consortiu
 import { MyGroupsComponent } from './views/my-groups/my-groups.component';
 import { TrackPaymentsComponent } from './views/track-payments/track-payments.component';
 import {OptionsComponent} from "./views/options/options.component";
-import { EditAccountComponent } from './views/edit-account/edit-account.component';
-import { EditProfileComponent } from './views/edit-profile/edit-profile.component';
+import { EditAccountComponent } from './views/options/edit-account/edit-account.component';
+import { EditProfileComponent } from './views/options/edit-profile/edit-profile.component';
 
 
 export const routes: Routes = [

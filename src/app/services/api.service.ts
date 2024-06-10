@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
-import { User } from '../../models/User/signup.model';
-import { CreateGroup } from '../../models/Create-Group/createGroup.model';
-import { Observable } from 'rxjs';
+import { Signup } from '../../models/User/signup.model';
 
 
 @Injectable({
@@ -16,10 +14,13 @@ export class ApiService {
 
 
   getUsers(){
-    return this.httpClient.get<User[]>(`${this.url}/users`);
+    return this.httpClient.get<Signup[]>(`${this.url}/users`);
   }
 
-  postGroup(groupData: CreateGroup): Observable<CreateGroup> {
-    return this.httpClient.post<CreateGroup>(`${this.url}/groups/1/create`, groupData);
+  updateUser(userId: number, updateUser: UpdateUser) {
+    return this.httpClient.put<UpdateUser>(`${this.url}/users/${userId}/update`, updateUser);
   }
+
+
+
 }
