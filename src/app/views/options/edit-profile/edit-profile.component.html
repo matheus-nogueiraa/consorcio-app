@@ -12,37 +12,37 @@
         <div class="form-field-login">
           <p>Nome</p>
           <mat-form-field>
-            <input matInput placeholder="{{dados.name}}" [(ngModel)]="name" name="name">
+            <input matInput [formControl]="name">
             <mat-icon matSuffix>mode_edit</mat-icon>
           </mat-form-field>
 
           <p>Telefone</p>
           <mat-form-field>
-            <input type="tel" matInput placeholder="{{ formatPhoneNumber(dados.phone)}}" [(ngModel)]="phone" name="phone">
+            <input type="tel" matInput [formControl]="phone">
             <mat-icon matSuffix>mode_edit</mat-icon>
           </mat-form-field>
 
           <p>Endereço</p>
           <mat-form-field>
-            <textarea matInput placeholder="{{dados.address}}" [(ngModel)]="address" name="address"></textarea>
+            <textarea matInput [formControl]="address"></textarea>
             <mat-icon matSuffix>mode_edit</mat-icon>
           </mat-form-field>
 
           <p>Complemento</p>
           <mat-form-field>
-            <textarea matInput placeholder="{{dados.complement}}" [(ngModel)]="complement" name="complement"></textarea>
+            <textarea matInput [formControl]="complement"></textarea>
             <mat-icon matSuffix>mode_edit</mat-icon>
           </mat-form-field>
 
           <p>Estado</p>
           <mat-form-field>
-            <input matInput placeholder="{{dados.state}}" [(ngModel)]="state" name="state">
+            <input matInput [formControl]="state">
             <mat-icon matSuffix>mode_edit</mat-icon>
           </mat-form-field>
 
           <p>Cidade</p>
           <mat-form-field>
-            <input matInput placeholder="{{dados.city}}" [(ngModel)]="city" name="city">
+            <input matInput [formControl]="city">
             <mat-icon matSuffix>mode_edit</mat-icon>
           </mat-form-field>
         </div>
