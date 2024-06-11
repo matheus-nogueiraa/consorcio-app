@@ -8,7 +8,6 @@ import { VisibilityService } from './services/visibility.service';
 import { HttpClientModule } from '@angular/common/http';
 import { environment } from '../environments/environment';
 import { ApiService } from './services/api.service';
-import { FormsModule } from '@angular/forms';
 
 @Component({
     selector: 'app-root',
@@ -16,14 +15,13 @@ import { FormsModule } from '@angular/forms';
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
     imports: [RouterOutlet, HomeComponent, CreateGroupsComponent,
-       HeaderDetailsGroupComponent, CommonModule, RouterLink, RouterLinkActive, HttpClientModule, FormsModule],
+       HeaderDetailsGroupComponent, CommonModule, RouterLink, RouterLinkActive, HttpClientModule],
     providers: [ApiService, VisibilityService]
 })
 
 export class AppComponent implements OnInit, AfterViewInit {
   title = 'Seu Consórcio';
   users: any[] = [];
-  groups: any[] = [];
 
   constructor(
     private visibilityService: VisibilityService,
@@ -46,6 +44,4 @@ export class AppComponent implements OnInit, AfterViewInit {
   public getShowComponent(): boolean {
     return this.visibilityService.getShowComponent();
   }
-
-  
 }

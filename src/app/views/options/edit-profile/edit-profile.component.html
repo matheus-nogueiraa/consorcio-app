@@ -9,51 +9,45 @@
   <div class="form" fxLayout="column">
     <form fxLayout="row wrap" fxLayoutAlign="space-between"  #profileForm="ngForm">
       <div class="container">
-        <div class="form-field-login" *ngFor="let dado of dados$ | async">
+        <div class="form-field-login">
           <p>Nome</p>
           <mat-form-field>
-            <input matInput placeholder="{{dado.name}}" [(ngModel)]="name" name="name">
+            <input matInput [formControl]="name">
             <mat-icon matSuffix>mode_edit</mat-icon>
           </mat-form-field>
 
           <p>Telefone</p>
           <mat-form-field>
-            <input type="tel" matInput placeholder="{{ formatPhoneNumber(dado.phone)}}" [(ngModel)]="phone" name="phone">
+            <input type="tel" matInput [formControl]="phone">
             <mat-icon matSuffix>mode_edit</mat-icon>
           </mat-form-field>
 
           <p>Endereço</p>
           <mat-form-field>
-            <textarea matInput placeholder="{{dado.address}}" [(ngModel)]="address" name="address"></textarea>
+            <textarea matInput [formControl]="address"></textarea>
             <mat-icon matSuffix>mode_edit</mat-icon>
           </mat-form-field>
 
           <p>Complemento</p>
           <mat-form-field>
-            <textarea matInput placeholder="{{dado.complement}}" [(ngModel)]="complement" name="complement"></textarea>
+            <textarea matInput [formControl]="complement"></textarea>
             <mat-icon matSuffix>mode_edit</mat-icon>
           </mat-form-field>
 
           <p>Estado</p>
           <mat-form-field>
-            <input matInput placeholder="{{dado.state}}" [(ngModel)]="state" name="state">
+            <input matInput [formControl]="state">
             <mat-icon matSuffix>mode_edit</mat-icon>
           </mat-form-field>
 
           <p>Cidade</p>
           <mat-form-field>
-            <input matInput placeholder="{{dado.city}}" [(ngModel)]="city" name="city">
+            <input matInput [formControl]="city">
             <mat-icon matSuffix>mode_edit</mat-icon>
           </mat-form-field>
         </div>
       </div>
     </form>
-
-
-    <div class="button">
-      <button mat-raised-button color="primary" (click)="updateUser">ATUALIZAR</button>
-    </div>
-
   </div>
 </div>
 

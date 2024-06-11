@@ -8,11 +8,6 @@ import { UpdateLogin } from '../../models/User/update-login.model';
 import { UserPayments } from '../../models/Payment/user-payments.model';
 
 
-import { Group } from '../../models/Group/group.model';
-import { CreateGroup } from '../../models/Group/createGroup.model';
-
-
-
 @Injectable({
   providedIn: 'root'
 })
@@ -42,14 +37,4 @@ export class ApiService {
   getPayments(): Observable<UserPayments[]> {
     return this.httpClient.get<UserPayments[]>(`${this.url}/payments/${this.userId}`);
   }
-
-  
-  getGroup(): Observable<Group[]> {
-    return this.httpClient.get<Group[]>(`${this.url}/groups`);
-  }
-
-  postGroup(userId: number, grupo: CreateGroup): Observable<CreateGroup> {
-    return this.httpClient.post<CreateGroup>(`${this.url}/groups/${userId}/create`, grupo);
-  }
-
 }
