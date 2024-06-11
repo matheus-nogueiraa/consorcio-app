@@ -10,9 +10,9 @@
   <div style="display: flex; justify-content: space-between;">
   <div>
     <button class="start" mat-flat-button color="#a52e45"
-      style="color: white; background-color: #a52e45; border-radius: 115px; margin-right: 8px;">Baixar Boleto</button>
+      style="color: white; background-color: #a52e45; border-radius: 115px; margin-right: 8px;" (click)="downloadBoleto()">Baixar Boleto</button>
     <button class="start" mat-flat-button color="#a52e45"
-      style="color: white; background-color: #a52e45; border-radius: 115px;" (click)="openDialog('0ms', '0ms')">Enviar Comprovante</button>
+      style="color: white; background-color: #a52e45; border-radius: 115px;" (click)="openDialog(boleto.id.toString(), '0ms', '0ms')">Enviar Comprovante</button>
   </div>
   <p style="font-size: 16px; font-weight: 500; color: #A52E45;">PENDENTE</p>
   </div>

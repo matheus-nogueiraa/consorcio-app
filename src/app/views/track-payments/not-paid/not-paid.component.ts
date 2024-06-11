@@ -7,7 +7,6 @@ import { ApiService } from '../../../services/api.service';
 import { UserPayments } from '../../../../models/Payment/user-payments.model';
 import { CommonModule } from '@angular/common';
 
-
 @Component({
   selector: 'app-not-paid',
   standalone: true,
@@ -21,15 +20,16 @@ export class NotPaidComponent {
   constructor(
     public dialog: MatDialog,
     private apiService: ApiService
-  ){
-    this.obterBoletosNaoPagos()
+  ) {
+    this.obterBoletosNaoPagos();
   }
 
-  openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
+  openDialog(boletoId: string, enterAnimationDuration: string, exitAnimationDuration: string): void {
     this.dialog.open(ModalUploadComponent, {
       width: '374px',
       enterAnimationDuration,
       exitAnimationDuration,
+      data: { idBoleto: boletoId }
     });
   }
 
@@ -38,5 +38,15 @@ export class NotPaidComponent {
       .subscribe(boletos => {
         this.boletos = boletos.filter(boleto => !boleto.isPaid);
       });
+  }
+
+  downloadBoleto() {
+    const url = '../../../../assets/Modelo-de-Boleto.pdf';
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'Modelo-de-Boleto.pdf';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
   }
 }
