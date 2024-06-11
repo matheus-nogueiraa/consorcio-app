@@ -7,6 +7,9 @@ import { HeaderDetailsGroupComponent } from '../../components/header-details-gro
 import {MatIconModule} from '@angular/material/icon';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { ApiService } from '../../services/api.service';
+import { Group } from '../../../models/Group/group.model';
+import { empty } from 'rxjs';
 
 
 
@@ -18,6 +21,9 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './detalhes-do-grupo.component.css'
 })
 export class DetalhesDoGrupoComponent {
+
+ 
+
   openExternalLink(): void {
     window.open('https://wa.me/5562981687434', '_blank');
   }

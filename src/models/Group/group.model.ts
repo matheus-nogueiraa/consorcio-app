@@ -1,7 +1,10 @@
 export interface Group {
-    nomeGrupo: string ;
+    name: string;
+    valorTotal: number;
     valorParcelas: number;
-    valorCreditos: number ;
-    quantidadeParticipantes: number ;
+    dataCriacao: Date;
+    quantidadePessoas: number;
+     
+    
   }
   
