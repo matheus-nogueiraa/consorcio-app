@@ -64,8 +64,10 @@ criarGrupo() {
     groupData.dataCriacao = dataCriacao.toDate();
     groupData.dataFinal = dataFinal;
     groupData.duracaoMeses = quantidadeParcelas;
-    groupData.name = groupData.nomeGrupo; // Adicione este campo
-    groupData.valorTotal = groupData.valorCreditos; // Adicione este campo
+
+    groupData.name = groupData.nomeGrupo;
+    groupData.valorTotal = groupData.valorCreditos;
+    groupData.grupoFechado = groupData.grupoFechado; 
 
     this.apiService.postGroup(userId, groupData).subscribe(
       response => {
@@ -73,7 +75,6 @@ criarGrupo() {
       },
       error => {
         console.error('Erro ao criar grupo:', error);
-        console.error('Deu problema:', error);
       }
     );
   } else {
