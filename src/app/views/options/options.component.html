@@ -40,16 +40,16 @@
 [title]="'Opções'"
 ></app-banner>
 <app-card>
-  <div class="content-options" >
+  <div class="content-options" *ngFor="let dado of dados$ | async">
     <h1>Conta</h1>
     <span>
-      <p>E-mail:</p>
-      <p>{{dados.email}}</p>
+      <p>E-mail</p>
+      <p>{{dado.email}}</p>
     </span>
     <span>
-      <p>Senha:</p>
+      <p>Senha</p>
       <mat-form-field>
-        <input matInput [type]="hide ? 'password' : 'text'" [value]="dados.password" readonly>
+        <input matInput [type]="hide ? 'password' : 'text'" [value]="dado.password" readonly>
         <button mat-icon-button matSuffix (click)="toggleHide()">
           <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
         </button>
@@ -58,31 +58,31 @@
   </div>
 </app-card>
 <app-card>
-  <div class="content-options" >
+  <div class="content-options" *ngFor="let dado of dados$ | async">
     <h1>Perfil</h1>
     <span>
-      <p>Nome:</p>
-      <p>{{dados.name}}</p>
+      <p>Nome</p>
+      <p>{{dado.name}}</p>
     </span>
     <span>
-      <p>Telefone:</p>
-      <p>{{ formatPhoneNumber(dados.phone) }}</p>
+      <p>Telefone</p>
+      <p>{{ formatPhoneNumber(dado.phone) }}</p>
     </span>
     <span>
-      <p>Endereço:</p>
-      <p>{{dados.address}}</p>
+      <p>Endereço</p>
+      <p>{{dado.address}}</p>
     </span>
     <span>
-      <p>Complemento:</p>
-      <p>{{dados.complement}}</p>
+      <p>Complemento</p>
+      <p>{{dado.complement}}</p>
     </span>
     <span>
-      <p>Estado:</p>
-      <p>{{dados.state}}</p>
+      <p>Estado</p>
+      <p>{{dado.state}}</p>
     </span>
     <span>
-      <p>Cidade:</p>
-      <p>{{dados.city}}</p>
+      <p>Cidade</p>
+      <p>{{dado.city}}</p>
     </span>
   </div>
 </app-card>

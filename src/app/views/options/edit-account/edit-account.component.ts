@@ -118,4 +118,3 @@ setDados(dado: UpdateLogin) {
   this.password.setValue(dado.password);
 }
 }
-
