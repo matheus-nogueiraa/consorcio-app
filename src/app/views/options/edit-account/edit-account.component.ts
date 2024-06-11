@@ -15,13 +15,14 @@ import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarModule, MatSnack
 import { ApiService } from '../../../services/api.service';
 import { User } from '../../../../models/User/user.model';
 import { FormActionService } from '../../../services/formAction.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
     selector: 'app-edit-account',
     standalone: true,
     templateUrl: './edit-account.component.html',
     styleUrl: './edit-account.component.css',
-    imports: [MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule, FormsModule, ReactiveFormsModule, RouterOutlet, RouterLink, RouterLinkActive, HeaderMyGroupsComponent, HeaderAccountProfileComponent, MatSnackBarModule]
+    imports: [MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule, FormsModule, ReactiveFormsModule, RouterOutlet, RouterLink, RouterLinkActive, HeaderMyGroupsComponent, HeaderAccountProfileComponent, MatSnackBarModule, CommonModule]
 })
 export class EditAccountComponent implements OnInit{
   hide = true;
