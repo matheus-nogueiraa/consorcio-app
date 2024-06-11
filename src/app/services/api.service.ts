@@ -5,6 +5,7 @@ import { User } from '../../models/User/user.model';
 import { UpdateUser } from '../../models/User/update-user.model';
 import { Observable } from 'rxjs';
 import { UpdateLogin } from '../../models/User/update-login.model';
+import { UserPayments } from '../../models/Payment/user-payments.model';
 
 
 @Injectable({
@@ -31,5 +32,9 @@ export class ApiService {
 
   updateLogin(updateLogin: UpdateLogin) {
     return this.httpClient.put<UpdateUser>(`${this.url}/users/${this.userId}/updatelogin`, updateLogin);
+  }
+
+  getPayments(): Observable<UserPayments[]> {
+    return this.httpClient.get<UserPayments[]>(`${this.url}/payments/${this.userId}`);
   }
 }
