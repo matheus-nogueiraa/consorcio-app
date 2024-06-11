@@ -8,23 +8,49 @@ import { MatInputModule } from '@angular/material/input';
 import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
 import { User } from '../../../../models/User/user.model';
 import { ApiService } from '../../../services/api.service';
-import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { Validators, FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { FormActionService } from "../../../services/formAction.service";
-
+import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarModule, MatSnackBarVerticalPosition} from '@angular/material/snack-bar';
 @Component({
     selector: 'app-edit-profile',
     standalone: true,
     templateUrl: './edit-profile.component.html',
     styleUrl: './edit-profile.component.css',
-    imports: [MatFormFieldModule, HeaderMyGroupsComponent, MatFormFieldModule,
-       MatInputModule, MatButtonModule, MatIconModule, RouterOutlet, RouterLink,
-       RouterLinkActive, HeaderMyGroupsComponent, CommonModule, FormsModule, HeaderAccountProfileComponent]
+    imports: [MatFormFieldModule, HeaderMyGroupsComponent, MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule, RouterOutlet, RouterLink, RouterLinkActive, HeaderMyGroupsComponent, CommonModule,  HeaderAccountProfileComponent, MatSnackBarModule, FormsModule, ReactiveFormsModule,]
 })
 export class EditProfileComponent implements OnInit{
 
-  constructor(private formActionService: FormActionService, private ApiService: ApiService) {
+  horizontalPosition: MatSnackBarHorizontalPosition = 'center';
+  verticalPosition: MatSnackBarVerticalPosition = 'top';
+
+  //form
+  name = new FormControl('', [Validators.required]);
+  phone = new FormControl('', [Validators.required]);
+  address = new FormControl('', [Validators.required]);
+  complement = new FormControl('', [Validators.required]);
+  state = new FormControl('', [Validators.required]);
+  city = new FormControl('', [Validators.required]);
+
+  dados: User = {
+    id: 2,
+    name: '',
+    email: '',
+    password: '',
+    cpf: '',
+    phone: '',
+    address: '',
+    complement: '',
+    state: '',
+    city: '',
+  }
+
+  constructor(
+    private formActionService: FormActionService,
+    private apiService: ApiService,
+    private snackBar: MatSnackBar
+  ) {
+
     this.obterDadosUsuario();
   }
 
@@ -34,11 +60,19 @@ export class EditProfileComponent implements OnInit{
     });
   }
 
-  dados$ = new Observable<User[]>();
-
   obterDadosUsuario() {
-    this.dados$ = this.ApiService.getUsers();
+    this.apiService.getUser()
+      .subscribe(dados => {
+        this.dados = dados;
+        this.name.setValue(this.dados.name);
+        this.phone.setValue(this.formatPhoneNumber(this.dados.phone));
+        this.address.setValue(this.dados.address);
+        this.complement.setValue(this.dados.complement);
+        this.state.setValue(this.dados.state);
+        this.city.setValue(this.dados.city);
+  });
   }
+
 
   formatPhoneNumber(phone: string): string {
     const match = phone.match(/^(\d{2})(\d{1})(\d{4})(\d{4})$/);
@@ -48,41 +82,51 @@ export class EditProfileComponent implements OnInit{
     return phone;
   }
 
-  //form
-  name = '';
-  phone = '';
-  address = '';
-  complement = '';
-  state = '';
-  city = '';
-
   updateUser() {
-    if (!this.name || !this.phone || !this.address || !this.complement || !this.state || !this.city) {
+    const nameValue = this.name.value;
+    const phoneValue = this.phone.value;
+    const addressValue = this.address.value;
+    const complementValue = this.complement.value;
+    const stateValue = this.state.value;
+    const cityValue = this.city.value;
+
+    if (!nameValue || !phoneValue || !addressValue || !complementValue || !stateValue || !cityValue) {
       return;
     }
 
-    const userId = 2;
-
-    this.ApiService.updateUser(userId, {
-      name: this.name,
-      phone: this.phone,
-      address: this.address,
-      complement: this.complement,
-      state: this.state,
-      city: this.city
+    this.apiService.updateUser({
+      name: nameValue,
+      phone: phoneValue,
+      address: addressValue,
+      complement: complementValue,
+      state: stateValue,
+      city: cityValue
     })
+
     .subscribe(
       () => {
         this.obterDadosUsuario();
+        this.snackBar.open('Perfil atualizado com sucesso!', 'Fechar', {
+          horizontalPosition: this.horizontalPosition,
+          verticalPosition: this.verticalPosition,
+          duration: 3000
+        });
+      },
+      error => {
+        this.snackBar.open('Erro ao atualizar perfil.', 'Fechar', {
+          horizontalPosition: this.horizontalPosition,
+          verticalPosition: this.verticalPosition,
+          duration: 3000
+        });
       }
     );
   }
   setDados(dado: User) {
-    this.name = dado.name;
-    this.phone = dado.phone;
-    this.address = dado.address;
-    this.complement = dado.complement;
-    this.state = dado.state;
-    this.city = dado.city;
+    this.name.setValue (dado.name);
+    this.phone.setValue  (dado.phone);
+    this.address.setValue (dado.address);
+    this.complement.setValue (dado.complement);
+    this.state.setValue (dado.state);
+    this.city.setValue (dado.city);
   }
 }
