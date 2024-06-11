@@ -24,7 +24,7 @@ export class TrackPaymentsComponent {
   allPaidBoletos: UserPayments[] = [];
   allNotPaidBoletos: UserPayments[] = [];
   showFullList = false;
-  limit = 5;
+  limit = 3;
 
 
   constructor(private apiService: ApiService) {
