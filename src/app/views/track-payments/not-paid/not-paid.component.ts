@@ -7,7 +7,6 @@ import { ApiService } from '../../../services/api.service';
 import { UserPayments } from '../../../../models/Payment/user-payments.model';
 import { CommonModule } from '@angular/common';
 
-
 @Component({
   selector: 'app-not-paid',
   standalone: true,
@@ -39,4 +38,15 @@ export class NotPaidComponent {
         this.boletos = boletos.filter(boleto => !boleto.isPaid);
       });
   }
+
+  downloadBoleto() {
+    const url = '../../../../assets/Modelo-de-Boleto.pdf';
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'Modelo-de-Boleto.pdf';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  }
+
 }
