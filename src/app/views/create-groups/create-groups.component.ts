@@ -32,7 +32,7 @@ export class CreateGroupsComponent implements OnInit {
       valorCreditos: [0, [Validators.required, Validators.min(1)]],
       quantidadePessoas: [0, [Validators.required, Validators.min(1)]],
       privado: [false],
-      idUser: [0], // Campo para o ID do usuário
+      idUser: [0], 
     });
   }
 
@@ -46,24 +46,15 @@ criarGrupo() {
     const groupData = this.groupForm.value;
     const dataCriacao = moment();
 
-    // A quantidade de parcelas é definida pela quantidade de participantes
     const quantidadeParcelas = groupData.quantidadePessoas;
 
-    // Calcule a data final adicionando a quantidade de parcelas (meses) à data de criação
     const dataFinal = dataCriacao.clone().add(quantidadeParcelas, 'months').toDate();
       groupData.dataCriacao = dataCriacao.toDate();
       groupData.dataFinal = dataFinal;
       groupData.duracaoMeses = quantidadeParcelas;
-      groupData.name = groupData.nomeGrupo; // Adicione este campo se necessário
-      groupData.valorTotal = groupData.valorCreditos; // Adicione este campo se necessário
+      groupData.name = groupData.nomeGrupo; 
+      groupData.valorTotal = groupData.valorCreditos; 
       groupData.meses = groupData.quantidadePessoas;
-
-      console.log('Form Data:', this.groupForm.value);
-console.log('Data de Criação:', dataCriacao);
-console.log('Quantidade de Parcelas:', quantidadeParcelas);
-console.log('Data Final:', dataFinal);
-
-
 
     this.apiService.postGroup(userId, groupData).subscribe(
       response => {
