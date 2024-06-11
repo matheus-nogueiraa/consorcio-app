@@ -16,20 +16,6 @@ import { ApiService } from '../../services/api.service';
 })
 export class MyGroupsComponent {
 
-    dados: Group = {
-        name: '',
-        valorParcelas: 0,
-        valorTotal: 0,
-        quantidadePessoas: 0,       
-      }
-
-    constructor(private apiService: ApiService) {
-        this.obterDadosGrupo();
-    }
-
-    obterDadosGrupo() {
-    this.apiService.getGroup()
-        .subscribe(dados => this.dados = dados);
-   }
+   
 
 }
