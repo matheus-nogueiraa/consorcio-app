@@ -18,7 +18,7 @@ export class ApiService {
 
   private url = environment.api;
   constructor(private httpClient: HttpClient) { }
-  userId = 3;
+  userId = 2;
 
   getUsers(): Observable<User[]> {
     return this.httpClient.get<User[]>(`${this.url}/users`);
