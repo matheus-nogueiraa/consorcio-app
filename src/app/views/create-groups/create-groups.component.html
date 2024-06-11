@@ -73,7 +73,7 @@
 
           <p>Quantidade de Participantes</p>
           <mat-form-field>
-            <input matInput placeholder="Digite aqui" formControlName="quantidadeParticipantes" name="quantidadeParticipantes" type="number">
+            <input matInput placeholder="Digite aqui" formControlName="quantidadePessoas" name="quantidadePessoas" type="number">
           </mat-form-field>
         </div>
       </div>
@@ -83,7 +83,7 @@
 
       <!-- Switch -->
       <div class="switch" [formGroup]="groupForm">
-        <mat-slide-toggle formControlName="grupoFechado" name="grupoFechado">Grupo Fechado</mat-slide-toggle>
+        <mat-slide-toggle formControlName="privado" name="privado">Grupo Fechado</mat-slide-toggle>
       </div>
 
       <!-- Botão -->
@@ -115,7 +115,7 @@
 
         <p>Quantidade de Participantes</p>
         <mat-form-field>
-          <input matInput placeholder="Digite aqui" formControlName="quantidadeParticipantes" name="quantidadeParticipantes" type="number">
+          <input matInput placeholder="Digite aqui" formControlName="quantidadePessoas" name="quantidadePessoas" type="number">
         </mat-form-field>
       </div>
     </div>
@@ -123,7 +123,7 @@
 
     <!-- Switch -->
     <div class="switch">
-      <mat-slide-toggle  name="grupoFechado">Grupo Fechado</mat-slide-toggle>
+      <mat-slide-toggle  name="privado">Grupo Fechado</mat-slide-toggle>
     </div>
 
     <!-- Botão -->

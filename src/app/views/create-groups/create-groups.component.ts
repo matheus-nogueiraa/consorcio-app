@@ -10,8 +10,6 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 import { ApiService } from '../../services/api.service';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Observable,  } from 'rxjs';
-import { Group } from '../../../models/Group/group.model';
 import moment from 'moment';
 
 @Component({
@@ -25,9 +23,6 @@ import moment from 'moment';
 })
 export class CreateGroupsComponent implements OnInit {
   
-  
-  grupo$ = new Observable<Group[]>();
-
   groupForm: FormGroup ;
   
   constructor(private fb: FormBuilder, private apiService: ApiService) {
@@ -35,20 +30,15 @@ export class CreateGroupsComponent implements OnInit {
       nomeGrupo: ['', Validators.required],
       valorParcelas: [0, [Validators.required, Validators.min(1)]],
       valorCreditos: [0, [Validators.required, Validators.min(1)]],
-      quantidadeParticipantes: [0, [Validators.required, Validators.min(1)]],
-      grupoFechado: [false],
-      idUser: [0] // Campo para o ID do usuário
+      quantidadePessoas: [0, [Validators.required, Validators.min(1)]],
+      privado: [false],
+      idUser: [0], // Campo para o ID do usuário
     });
   }
+
   ngOnInit(): void {
     const userId = this.apiService.userId;
   }
-
-
-
- obterDadosGrupo() {
-  this.grupo$ = this.apiService.getGroup();
-}
 
 criarGrupo() {
   if (this.groupForm.valid) {
@@ -57,17 +47,23 @@ criarGrupo() {
     const dataCriacao = moment();
 
     // A quantidade de parcelas é definida pela quantidade de participantes
-    const quantidadeParcelas = groupData.quantidadeParticipantes;
+    const quantidadeParcelas = groupData.quantidadePessoas;
 
     // Calcule a data final adicionando a quantidade de parcelas (meses) à data de criação
-    const dataFinal = dataCriacao.add(quantidadeParcelas, 'months').toDate();
-    groupData.dataCriacao = dataCriacao.toDate();
-    groupData.dataFinal = dataFinal;
-    groupData.duracaoMeses = quantidadeParcelas;
+    const dataFinal = dataCriacao.clone().add(quantidadeParcelas, 'months').toDate();
+      groupData.dataCriacao = dataCriacao.toDate();
+      groupData.dataFinal = dataFinal;
+      groupData.duracaoMeses = quantidadeParcelas;
+      groupData.name = groupData.nomeGrupo; // Adicione este campo se necessário
+      groupData.valorTotal = groupData.valorCreditos; // Adicione este campo se necessário
+      groupData.meses = groupData.quantidadePessoas;
 
-    groupData.name = groupData.nomeGrupo;
-    groupData.valorTotal = groupData.valorCreditos;
-    groupData.grupoFechado = groupData.grupoFechado; 
+      console.log('Form Data:', this.groupForm.value);
+console.log('Data de Criação:', dataCriacao);
+console.log('Quantidade de Parcelas:', quantidadeParcelas);
+console.log('Data Final:', dataFinal);
+
+
 
     this.apiService.postGroup(userId, groupData).subscribe(
       response => {

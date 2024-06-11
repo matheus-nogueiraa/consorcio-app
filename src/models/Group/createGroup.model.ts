@@ -2,8 +2,9 @@ export interface CreateGroup {
     nomeGrupo: string ;
     valorParcelas: number;
     valorCreditos: number ;
-    quantidadeParticipantes: number ;
+    quantidadePessoas: number ;
     grupoFechado: boolean;
+    meses: number;
   
   }
   
