@@ -323,3 +323,10 @@ html .mat-mdc-fab.mat-primary {
 .mat-mdc-snack-bar-container .mat-mdc-button.mat-mdc-snack-bar-action:not(:disabled) {
   color: white !important;
 }
+
+.mat-mdc-dialog-container-with-actions .mat-mdc-dialog-content {
+  --mat-dialog-with-actions-content-padding: 20px !important;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}

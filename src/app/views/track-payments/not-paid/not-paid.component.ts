@@ -20,15 +20,16 @@ export class NotPaidComponent {
   constructor(
     public dialog: MatDialog,
     private apiService: ApiService
-  ){
-    this.obterBoletosNaoPagos()
+  ) {
+    this.obterBoletosNaoPagos();
   }
 
-  openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
+  openDialog(boletoId: string, enterAnimationDuration: string, exitAnimationDuration: string): void {
     this.dialog.open(ModalUploadComponent, {
       width: '374px',
       enterAnimationDuration,
       exitAnimationDuration,
+      data: { idBoleto: boletoId }
     });
   }
 
@@ -48,5 +49,4 @@ export class NotPaidComponent {
     a.click();
     document.body.removeChild(a);
   }
-
 }

@@ -6,6 +6,7 @@ import { UpdateUser } from '../../models/User/update-user.model';
 import { Observable } from 'rxjs';
 import { UpdateLogin } from '../../models/User/update-login.model';
 import { UserPayments } from '../../models/Payment/user-payments.model';
+import { MakePayment } from '../../models/Payment/make-payment.model';
 
 
 @Injectable({
@@ -36,5 +37,9 @@ export class ApiService {
 
   getPayments(): Observable<UserPayments[]> {
     return this.httpClient.get<UserPayments[]>(`${this.url}/payments/${this.userId}`);
+  }
+
+  makePayment(idBoleto: number): Observable<MakePayment> {
+    return this.httpClient.put<MakePayment>(`${this.url}/payments/${this.userId}/${idBoleto}`, {});
   }
 }
