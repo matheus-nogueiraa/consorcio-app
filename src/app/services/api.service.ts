@@ -8,6 +8,7 @@ import { UpdateLogin } from '../../models/User/update-login.model';
 import { UserPayments } from '../../models/Payment/user-payments.model';
 import { Group } from '../../models/Group/group.model';
 import { CreateGroup } from '../../models/Group/createGroup.model';
+import { MakePayment } from '../../models/Payment/make-payment.model';
 
 
 @Injectable({
@@ -46,5 +47,9 @@ export class ApiService {
 
   postGroup(userId: number, grupo: CreateGroup): Observable<CreateGroup> {
     return this.httpClient.post<CreateGroup>(`${this.url}/groups/${userId}/create`, grupo);
+  }
+
+  makePayment(idBoleto: number): Observable<MakePayment> {
+    return this.httpClient.put<MakePayment>(`${this.url}/payments/${this.userId}/${idBoleto}`, {});
   }
 }
