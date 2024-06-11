@@ -308,18 +308,4 @@ html .mat-mdc-fab.mat-primary {
   padding: 0px 16px !important;
 }
 
-.mat-mdc-snack-bar-container .mdc-snackbar__surface {
-  border-radius: 30px !important;
-  -webkit-border-radius: 30px !important;
-  -moz-border-radius: 30px !important;
-  -ms-border-radius: 30px !important;
-  -o-border-radius: 30px !important;
-}
 
-.mat-mdc-snack-bar-container .mdc-snackbar__surface {
-  background-color: #739FA0 !important;
-}
-
-.mat-mdc-snack-bar-container .mat-mdc-button.mat-mdc-snack-bar-action:not(:disabled) {
-  color: white !important;
-}
