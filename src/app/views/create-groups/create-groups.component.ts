@@ -73,6 +73,7 @@ criarGrupo() {
       },
       error => {
         console.error('Erro ao criar grupo:', error);
+        console.error('Deu problema:', error);
       }
     );
   } else {
