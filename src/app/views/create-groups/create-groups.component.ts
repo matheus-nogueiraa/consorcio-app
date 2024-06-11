@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HeaderDetailsGroupComponent } from "../../components/header-details-group/header-details-group.component";
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -7,32 +7,39 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatButtonModule} from '@angular/material/button';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { ApiService } from '../../services/api.service';
+import { CommonModule } from '@angular/common';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Observable,  } from 'rxjs';
+import { Group } from '../../../models/Group/group.model';
+import moment from 'moment';
 
 @Component({
-    selector: 'app-create-groups',
-    standalone: true,
-    templateUrl: './create-groups.component.html',
-    styleUrl: './create-groups.component.css',
-    imports: [HeaderDetailsGroupComponent, MatInputModule, MatFormFieldModule,MatSlideToggleModule,MatButtonModule, MatIconModule, MatTooltipModule, RouterLink, RouterLinkActive]
+  selector: 'app-create-groups',
+  standalone: true,
+  templateUrl: './create-groups.component.html',
+  styleUrl: './create-groups.component.css',
+  imports: [HeaderDetailsGroupComponent, MatInputModule, MatFormFieldModule,
+    MatSlideToggleModule,MatButtonModule, MatIconModule, MatTooltipModule, RouterLink, RouterLinkActive,
+  CommonModule, FormsModule, ReactiveFormsModule ]
 })
-export class CreateGroupsComponent {
-  nomeGrupo: string = "";
-  valorParcelas: number = 0;
-  valorCreditos: number = 0;
-  quantidadeParticipantes: number = 0;
-  grupoFechado: boolean = false;
+export class CreateGroupsComponent implements OnInit {
+  
+  
+  grupo$ = new Observable<Group[]>();
 
-  criarGrupo() {
-
-    console.log('Dados do grupo enviados:', {
-      nomeGrupo: this.nomeGrupo,
-      valorParcelas: this.valorParcelas,
-      valorCreditos: this.valorCreditos,
-      quantidadeParticipantes: this.quantidadeParticipantes,
-      grupoFechado: this.grupoFechado
+  groupForm: FormGroup ;
+  
+  constructor(private fb: FormBuilder, private apiService: ApiService) {
+    this.groupForm = this.fb.group({
+      nomeGrupo: ['', Validators.required],
+      valorParcelas: [0, [Validators.required, Validators.min(1)]],
+      valorCreditos: [0, [Validators.required, Validators.min(1)]],
+      quantidadeParticipantes: [0, [Validators.required, Validators.min(1)]],
+      grupoFechado: [false],
+      idUser: [0] // Campo para o ID do usuário
     });
   }
-<<<<<<< HEAD
   ngOnInit(): void {
     const userId = this.apiService.userId;
   }
@@ -74,10 +81,10 @@ criarGrupo() {
     console.log('Formulário inválido', this.groupForm);
   }
 }
-=======
->>>>>>> 4cf89d54a06e44f76dff378181fb011fe9f2ad86
 
   openExternalLink(): void {
     window.open('https://wa.me/5562981687434', '_blank');
   }
+
+  
 }
